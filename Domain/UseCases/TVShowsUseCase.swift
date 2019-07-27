@@ -7,7 +7,11 @@
 //
 
 import Foundation
+import RxSwift
 
 public protocol TVShowsUseCase {
-
+    func topRated() -> Observable<[TVShow]>
+    func popular() -> Observable<[TVShow]>
+    func detail() -> Observable<TVShowDetail>
+    func credits() -> Observable<Credits>
 }

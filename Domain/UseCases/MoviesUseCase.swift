@@ -7,7 +7,12 @@
 //
 
 import Foundation
+import RxSwift
 
 public protocol MoviesUseCase {
-    
+    func topRated() -> Observable<[Movie]>
+    func nowPlaying() -> Observable<[Movie]>
+    func popular() -> Observable<[Movie]>
+    func detail() -> Observable<MovieDetail>
+    func credits() -> Observable<Credits>
 }
