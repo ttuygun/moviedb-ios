@@ -12,7 +12,43 @@
 		D5D954AF22EC68A700D1C00C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D954AD22EC68A700D1C00C /* Main.storyboard */; };
 		D5D954B122EC68A800D1C00C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5D954B022EC68A800D1C00C /* Assets.xcassets */; };
 		D5D954B422EC68A800D1C00C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D954B222EC68A800D1C00C /* LaunchScreen.storyboard */; };
+		D5D954C422EC7F6400D1C00C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D954BC22EC7F6400D1C00C /* Result.framework */; };
+		D5D954C522EC7F6400D1C00C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D954BD22EC7F6400D1C00C /* Alamofire.framework */; };
+		D5D954C622EC7F6400D1C00C /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D954BE22EC7F6400D1C00C /* RxAtomic.framework */; };
+		D5D954C722EC7F6400D1C00C /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D954BF22EC7F6400D1C00C /* RxMoya.framework */; };
+		D5D954C822EC7F6400D1C00C /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D954C022EC7F6400D1C00C /* RxBlocking.framework */; };
+		D5D954C922EC7F6400D1C00C /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D954C122EC7F6400D1C00C /* RxCocoa.framework */; };
+		D5D954CA22EC7F6400D1C00C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D954C222EC7F6400D1C00C /* RxSwift.framework */; };
+		D5D954CB22EC7F6400D1C00C /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D954C322EC7F6400D1C00C /* Moya.framework */; };
+		D5D954CD22EC7FA100D1C00C /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5D954BD22EC7F6400D1C00C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5D954CE22EC7FA100D1C00C /* Moya.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5D954C322EC7F6400D1C00C /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5D954CF22EC7FA100D1C00C /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5D954BC22EC7F6400D1C00C /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5D954D022EC7FA100D1C00C /* RxAtomic.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5D954BE22EC7F6400D1C00C /* RxAtomic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5D954D122EC7FA100D1C00C /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5D954C022EC7F6400D1C00C /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5D954D222EC7FA100D1C00C /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5D954C122EC7F6400D1C00C /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5D954D322EC7FA100D1C00C /* RxMoya.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5D954BF22EC7F6400D1C00C /* RxMoya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5D954D422EC7FA100D1C00C /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5D954C222EC7F6400D1C00C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D5D954CC22EC7F7A00D1C00C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D5D954CD22EC7FA100D1C00C /* Alamofire.framework in CopyFiles */,
+				D5D954CE22EC7FA100D1C00C /* Moya.framework in CopyFiles */,
+				D5D954CF22EC7FA100D1C00C /* Result.framework in CopyFiles */,
+				D5D954D022EC7FA100D1C00C /* RxAtomic.framework in CopyFiles */,
+				D5D954D122EC7FA100D1C00C /* RxBlocking.framework in CopyFiles */,
+				D5D954D222EC7FA100D1C00C /* RxCocoa.framework in CopyFiles */,
+				D5D954D322EC7FA100D1C00C /* RxMoya.framework in CopyFiles */,
+				D5D954D422EC7FA100D1C00C /* RxSwift.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D5D954A622EC68A700D1C00C /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +58,14 @@
 		D5D954B022EC68A800D1C00C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5D954B322EC68A800D1C00C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5D954B522EC68A800D1C00C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5D954BC22EC7F6400D1C00C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		D5D954BD22EC7F6400D1C00C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		D5D954BE22EC7F6400D1C00C /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
+		D5D954BF22EC7F6400D1C00C /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
+		D5D954C022EC7F6400D1C00C /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		D5D954C122EC7F6400D1C00C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		D5D954C222EC7F6400D1C00C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		D5D954C322EC7F6400D1C00C /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +73,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5D954C422EC7F6400D1C00C /* Result.framework in Frameworks */,
+				D5D954C522EC7F6400D1C00C /* Alamofire.framework in Frameworks */,
+				D5D954C622EC7F6400D1C00C /* RxAtomic.framework in Frameworks */,
+				D5D954C722EC7F6400D1C00C /* RxMoya.framework in Frameworks */,
+				D5D954C822EC7F6400D1C00C /* RxBlocking.framework in Frameworks */,
+				D5D954C922EC7F6400D1C00C /* RxCocoa.framework in Frameworks */,
+				D5D954CA22EC7F6400D1C00C /* RxSwift.framework in Frameworks */,
+				D5D954CB22EC7F6400D1C00C /* Moya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +92,7 @@
 			children = (
 				D5D954A822EC68A700D1C00C /* MovieDB */,
 				D5D954A722EC68A700D1C00C /* Products */,
+				D5D954BB22EC7F6400D1C00C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +117,21 @@
 			path = MovieDB;
 			sourceTree = "<group>";
 		};
+		D5D954BB22EC7F6400D1C00C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5D954BD22EC7F6400D1C00C /* Alamofire.framework */,
+				D5D954C322EC7F6400D1C00C /* Moya.framework */,
+				D5D954BC22EC7F6400D1C00C /* Result.framework */,
+				D5D954BE22EC7F6400D1C00C /* RxAtomic.framework */,
+				D5D954C022EC7F6400D1C00C /* RxBlocking.framework */,
+				D5D954C122EC7F6400D1C00C /* RxCocoa.framework */,
+				D5D954BF22EC7F6400D1C00C /* RxMoya.framework */,
+				D5D954C222EC7F6400D1C00C /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +142,7 @@
 				D5D954A222EC68A700D1C00C /* Sources */,
 				D5D954A322EC68A700D1C00C /* Frameworks */,
 				D5D954A422EC68A700D1C00C /* Resources */,
+				D5D954CC22EC7F7A00D1C00C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -283,6 +352,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 693NZ69PJ7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MovieDB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +374,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 693NZ69PJ7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MovieDB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
