@@ -34,6 +34,10 @@
 		D5D954EF22EC811500D1C00C /* NetworkPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = D5D954ED22EC811500D1C00C /* NetworkPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5D954F222EC811500D1C00C /* NetworkPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D954EB22EC811500D1C00C /* NetworkPlatform.framework */; };
 		D5D954F322EC811500D1C00C /* NetworkPlatform.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5D954EB22EC811500D1C00C /* NetworkPlatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5D954F922EC819300D1C00C /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D954F822EC819300D1C00C /* UseCaseProvider.swift */; };
+		D5D954FD22EC82F500D1C00C /* MoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D954FC22EC82F500D1C00C /* MoviesUseCase.swift */; };
+		D5D9550122EC832100D1C00C /* TVShowsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D9550022EC832100D1C00C /* TVShowsUseCase.swift */; };
+		D5D9550322EC832F00D1C00C /* ProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D9550222EC832F00D1C00C /* ProfileUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,10 @@
 		D5D954EB22EC811500D1C00C /* NetworkPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D954ED22EC811500D1C00C /* NetworkPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkPlatform.h; sourceTree = "<group>"; };
 		D5D954EE22EC811500D1C00C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5D954F822EC819300D1C00C /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
+		D5D954FC22EC82F500D1C00C /* MoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUseCase.swift; sourceTree = "<group>"; };
+		D5D9550022EC832100D1C00C /* TVShowsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsUseCase.swift; sourceTree = "<group>"; };
+		D5D9550222EC832F00D1C00C /* ProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +194,8 @@
 		D5D954DB22EC80F600D1C00C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D5D9550422EC844700D1C00C /* Entries */,
+				D5D954F722EC817E00D1C00C /* UseCases */,
 				D5D954DC22EC80F600D1C00C /* Domain.h */,
 				D5D954DD22EC80F600D1C00C /* Info.plist */,
 			);
@@ -199,6 +209,24 @@
 				D5D954EE22EC811500D1C00C /* Info.plist */,
 			);
 			path = NetworkPlatform;
+			sourceTree = "<group>";
+		};
+		D5D954F722EC817E00D1C00C /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				D5D954F822EC819300D1C00C /* UseCaseProvider.swift */,
+				D5D954FC22EC82F500D1C00C /* MoviesUseCase.swift */,
+				D5D9550022EC832100D1C00C /* TVShowsUseCase.swift */,
+				D5D9550222EC832F00D1C00C /* ProfileUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		D5D9550422EC844700D1C00C /* Entries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +322,7 @@
 					};
 					D5D954D922EC80F600D1C00C = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					D5D954EA22EC811500D1C00C = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -361,6 +390,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5D9550122EC832100D1C00C /* TVShowsUseCase.swift in Sources */,
+				D5D9550322EC832F00D1C00C /* ProfileUseCase.swift in Sources */,
+				D5D954FD22EC82F500D1C00C /* MoviesUseCase.swift in Sources */,
+				D5D954F922EC819300D1C00C /* UseCaseProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +558,7 @@
 		D5D954B922EC68A800D1C00C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 693NZ69PJ7;
@@ -547,6 +581,7 @@
 		D5D954BA22EC68A800D1C00C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 693NZ69PJ7;
@@ -569,6 +604,7 @@
 		D5D954E422EC80F600D1C00C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -587,6 +623,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttuygun.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -597,6 +634,7 @@
 		D5D954E522EC80F600D1C00C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
