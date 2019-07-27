@@ -11,5 +11,6 @@ import Foundation
 public protocol UseCaseProvider {
     func makeMoviesUseCase() -> MoviesUseCase
     func makeTVShowsUseCase() -> TVShowsUseCase
-    func makeProfileUseCase() -> ProfileUseCase
+//    func makeProfileUseCase() -> ProfileUseCase
 }
+

@@ -14,7 +14,7 @@ protocol NetworkProviderProtocol {
     func makeTVShowNetwork() -> TVShowNetwork
 }
 
-public class NetworkProvider: NetworkProviderProtocol {
+final class NetworkProvider: NetworkProviderProtocol {
 
     public init() {}
 

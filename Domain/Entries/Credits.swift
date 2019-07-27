@@ -8,14 +8,14 @@
 
 import Foundation
 
-public struct Credits: Decodable {
+public struct Credits: Codable {
     let id: Int
     let cast: [Cast]
     let crew: [Crew]
 }
 
 // MARK: - Cast
-struct Cast: Decodable {
+struct Cast: Codable {
     let castID: Int
     let character, creditID: String
     let gender, id: Int
@@ -33,7 +33,7 @@ struct Cast: Decodable {
 }
 
 // MARK: - Crew
-struct Crew: Decodable {
+struct Crew: Codable {
     let creditID, department: String
     let gender, id: Int
     let job, name: String
