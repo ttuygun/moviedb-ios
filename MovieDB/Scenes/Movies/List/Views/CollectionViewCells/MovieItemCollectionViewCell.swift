@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieItemCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
 
     override func awakeFromNib() {
@@ -18,5 +20,6 @@ class MovieItemCollectionViewCell: UICollectionViewCell {
 
     func bind(_ viewModel: MovieItemViewModel) {
         titleLabel.text = viewModel.title
+        posterImage.kf.setImage(with: viewModel.posterPathURL)
     }
 }

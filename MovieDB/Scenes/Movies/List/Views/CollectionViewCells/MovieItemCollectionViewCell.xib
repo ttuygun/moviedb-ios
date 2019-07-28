@@ -13,32 +13,46 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieItemCollectionViewCell" id="677-yB-L6J" customClass="MovieItemCollectionViewCell" customModule="MovieDB" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="94" height="103"/>
+            <rect key="frame" x="0.0" y="0.0" width="122" height="175"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="94" height="103"/>
+                <rect key="frame" x="0.0" y="0.0" width="122" height="175"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG7-6h-qZG">
-                        <rect key="frame" x="10" y="10" width="74" height="88"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG7-6h-qZG">
+                        <rect key="frame" x="10" y="150" width="102" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="posterImage" translatesAutoresizingMaskIntoConstraints="NO" id="o1S-jz-sG9">
+                        <rect key="frame" x="10" y="10" width="102" height="135"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="102" id="4nm-6S-xzk"/>
+                            <constraint firstAttribute="height" constant="135" id="O1G-1s-o2b"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="vG7-6h-qZG" firstAttribute="leading" secondItem="677-yB-L6J" secondAttribute="leading" constant="10" id="3iO-Wg-ncQ"/>
+                <constraint firstItem="vG7-6h-qZG" firstAttribute="top" secondItem="o1S-jz-sG9" secondAttribute="bottom" constant="5" id="BzN-jj-NK9"/>
                 <constraint firstAttribute="trailing" secondItem="vG7-6h-qZG" secondAttribute="trailing" constant="10" id="LuG-cz-qiU"/>
-                <constraint firstItem="vG7-6h-qZG" firstAttribute="top" secondItem="677-yB-L6J" secondAttribute="top" constant="10" id="OIX-DB-X8E"/>
+                <constraint firstAttribute="trailing" secondItem="o1S-jz-sG9" secondAttribute="trailing" constant="10" id="Pk5-x3-WxJ"/>
+                <constraint firstItem="o1S-jz-sG9" firstAttribute="leading" secondItem="677-yB-L6J" secondAttribute="leading" constant="10" id="e5r-Ci-aB3"/>
+                <constraint firstItem="o1S-jz-sG9" firstAttribute="top" secondItem="677-yB-L6J" secondAttribute="top" constant="10" id="mFC-6E-xy4"/>
                 <constraint firstAttribute="bottom" secondItem="vG7-6h-qZG" secondAttribute="bottom" constant="5" id="s4E-e5-9Bf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="d1K-2X-RfD"/>
-            <size key="customSize" width="94" height="103"/>
+            <size key="customSize" width="122" height="175"/>
             <connections>
+                <outlet property="posterImage" destination="o1S-jz-sG9" id="Nu5-J2-w1k"/>
                 <outlet property="titleLabel" destination="vG7-6h-qZG" id="OSd-SM-lGa"/>
             </connections>
-            <point key="canvasLocation" x="-328.98550724637681" y="-29.799107142857142"/>
+            <point key="canvasLocation" x="-308.69565217391306" y="-5.6919642857142856"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="posterImage" width="34" height="45"/>
+    </resources>
 </document>

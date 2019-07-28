@@ -8,15 +8,20 @@
 
 import Foundation
 import Domain
+import RxSwift
 
 final class MovieItemViewModel {
+    let movie: Movie
     let title: String?
     let releaseDate: String?
-    let movie: Movie
+    var posterPathURL: URL?
 
     init(with movie: Movie) {
         self.movie = movie
         title = movie.title?.uppercased()
         releaseDate = movie.releaseDate
+        if let posterPath = movie.posterPath, let url = URL(string: posterPath.transformPosterURL()) {
+            posterPathURL = url
+        }
     }
 }
