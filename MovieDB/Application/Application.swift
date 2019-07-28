@@ -22,6 +22,34 @@ final class Application {
     func configureMainInterface(in window: UIWindow) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
+        let moviesNavigationController = UINavigationController()
+        moviesNavigationController.tabBarItem = UITabBarItem(title: "Movies",
+                                                         image: UIImage(named: "iconMovies"),
+                                                         selectedImage: UIImage(named: "iconMoviesSelected"))
+
+        let moviesNavigator = MoviesListNavigator(services: networkUseCaseProvider,
+                                                  navigationController: moviesNavigationController,
+                                                  storyboard: storyboard)
+
+        let tvShowsNavigationController = UINavigationController()
+        tvShowsNavigationController.tabBarItem = UITabBarItem(title: "TV",
+                                                             image: UIImage(named: "iconTV"),
+                                                             selectedImage: UIImage(named: "iconTVSelected"))
+
+        let profileNavigationController = UINavigationController()
+        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile",
+                                                             image: UIImage(named: "iconProfile"),
+                                                             selectedImage: UIImage(named: "iconProfileSelected"))
+
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [
+            moviesNavigationController,
+            tvShowsNavigationController,
+            profileNavigationController
+        ]
+        window.rootViewController = tabBarController
+
+        moviesNavigator.toMovies()
 
     }
 }

@@ -9,18 +9,18 @@
 import Foundation
 
 public struct Movie: Decodable {
-    let voteCount, id: Int
-    let video: Bool
-    let voteAverage: Double
-    let title: String
-    let popularity: Double
-    let posterPath: String
-    let originalLanguage: OriginalLanguage
-    let originalTitle: String
-    let genreIDS: [Int]
+    let voteCount, id: Int?
+    let video: Bool?
+    let voteAverage: Double?
+    public let title: String?
+    let popularity: Double?
+    let posterPath: String?
+    let originalLanguage: String?
+    let originalTitle: String?
+    let genreIDS: [Int]?
     let backdropPath: String?
-    let adult: Bool
-    let overview, releaseDate: String
+    let adult: Bool?
+    public let overview, releaseDate: String?
 
     enum CodingKeys: String, CodingKey {
         case voteCount = "vote_count"
@@ -35,11 +35,4 @@ public struct Movie: Decodable {
         case adult, overview
         case releaseDate = "release_date"
     }
-}
-
-enum OriginalLanguage: String, Decodable {
-    case en = "en"
-    case ja = "ja"
-    case tl = "tl"
-    case es = "es"
 }

@@ -61,13 +61,13 @@ extension MDApi: TargetType, PluginType {
     }
 
     var task: Moya.Task {
-        return .requestPlain
+        return .requestParameters(parameters: ["api_key": ""], encoding: URLEncoding.queryString)
     }
 
     var headers: [String : String]? {
         switch self {
         default:
-            return ["api_key": ""]
+            return nil
         }
     }
 

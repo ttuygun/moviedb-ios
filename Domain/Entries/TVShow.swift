@@ -9,17 +9,17 @@
 import Foundation
 
 public struct TVShow: Decodable {
-    let originalName: String
-    let genreIDS: [Int]
-    let name: String
-    let popularity: Double
-    let originCountry: [OriginCountry]
-    let voteCount: Int
-    let firstAirDate, backdropPath: String
-    let originalLanguage: OriginalLanguage
-    let id: Int
-    let voteAverage: Double
-    let overview, posterPath: String
+    let originalName: String?
+    let genreIDS: [Int]?
+    let name: String?
+    let popularity: Double?
+    let originCountry: [String]?
+    let voteCount: Int?
+    let firstAirDate, backdropPath: String?
+    let originalLanguage: String?
+    let id: Int?
+    let voteAverage: Double?
+    let overview, posterPath: String?
 
     enum CodingKeys: String, CodingKey {
         case originalName = "original_name"
@@ -35,11 +35,4 @@ public struct TVShow: Decodable {
         case overview
         case posterPath = "poster_path"
     }
-}
-
-enum OriginCountry: String, Decodable {
-    case es = "ES"
-    case gb = "GB"
-    case jp = "JP"
-    case us = "US"
 }
