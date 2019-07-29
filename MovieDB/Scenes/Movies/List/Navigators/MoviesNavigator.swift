@@ -15,7 +15,7 @@ protocol MoviesNavigator {
     func toMovieDetail(_ movie: Movie)
 }
 
-class MoviesListNavigator: MoviesNavigator {
+class DefaultMoviesNavigator: MoviesNavigator {
     private let storyboard: UIStoryboard
     private let navigationController: UINavigationController
     private let services: UseCaseProvider
@@ -35,6 +35,10 @@ class MoviesListNavigator: MoviesNavigator {
     }
 
     func toMovieDetail(_ movie: Movie) {
-        
+        let navigator = DefaultMovieDetailNavigator(navigationController: navigationController)
+        let viewModel = MovieDetailViewModel(useCase: services.makeMoviesUseCase(), navigator: navigator, movie: movie)
+        let vc = storyboard.instantiateViewController(ofType: MovieDetailViewController.self)
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
     }
 }

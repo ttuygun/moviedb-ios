@@ -27,7 +27,7 @@ final class Application {
                                                          image: UIImage(named: "iconMovies"),
                                                          selectedImage: UIImage(named: "iconMoviesSelected"))
 
-        let moviesNavigator = MoviesListNavigator(services: networkUseCaseProvider,
+        let moviesNavigator = DefaultMoviesNavigator(services: networkUseCaseProvider,
                                                   navigationController: moviesNavigationController,
                                                   storyboard: storyboard)
 

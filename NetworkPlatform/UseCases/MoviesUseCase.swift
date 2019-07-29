@@ -29,7 +29,7 @@ final class MoviesUseCase: Domain.MoviesUseCase {
         return network.popular()
     }
 
-    func detail(id: String) -> Observable<MovieDetail> {
+    func detail(id: Int) -> Observable<MovieDetail> {
         return network.detail(id: id)
     }
 

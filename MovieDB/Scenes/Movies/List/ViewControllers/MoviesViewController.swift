@@ -34,6 +34,12 @@ class MoviesViewController: UIViewController {
         popularMoviesCollectionView.register(UINib(nibName: MovieItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: MovieItemCollectionViewCell.reuseID)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
+        self.navigationController?.navigationBar.isHidden = false
+    }
+
     private func bindViewModel() {
         assert(viewModel != nil)
 
@@ -49,6 +55,11 @@ class MoviesViewController: UIViewController {
             .Input(trigger: Driver.merge(viewWillAppear), selection: selection)
 
         let output = viewModel.transform(input: input)
+
+        selection.asObservable().subscribe(onNext: { (indexPath) in
+            debugPrint("selection=")
+            debugPrint(indexPath)
+        })
 
         output.nowPlayingMovies.drive(
             nowPlayingMoviesCollectionView
@@ -70,5 +81,9 @@ class MoviesViewController: UIViewController {
                           cellType: MovieItemCollectionViewCell.self)) {_, viewModel, cell in
                             cell.bind(viewModel)
             }.disposed(by: disposeBag)
+
+        output.selectedMovie
+            .drive()
+            .disposed(by: disposeBag)
     }
 }

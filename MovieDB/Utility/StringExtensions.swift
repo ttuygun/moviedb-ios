@@ -13,4 +13,12 @@ extension String {
     func transformPosterURL() -> String {
         return "https://image.tmdb.org/t/p/original\(self)"
     }
+
+    func createFullImageURL() -> URL? {
+        let path = "https://image.tmdb.org/t/p/original\(self)"
+        if let url = URL(string: path) {
+            return url
+        }
+        return nil
+    }
 }
