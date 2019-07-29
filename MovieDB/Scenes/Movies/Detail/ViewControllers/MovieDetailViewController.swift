@@ -45,7 +45,9 @@ class MovieDetailViewController: UIViewController {
     }
 
     private func registerCollectionViewCells() {
-        creditsCollectionView.register(UINib(nibName: CreditsItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: CreditsItemCollectionViewCell.reuseID)
+        creditsCollectionView
+            .register(UINib(nibName: CreditsItemCollectionViewCell.reuseID, bundle: nil),
+         forCellWithReuseIdentifier: CreditsItemCollectionViewCell.reuseID)
     }
 
     private func bindViewModel() {
@@ -85,8 +87,8 @@ class MovieDetailViewController: UIViewController {
         return Binder(self, binding: { (vc, viewModel) in
             vc.titleLabel.text = viewModel.movieDetail.title
             vc.voteLabel.text = viewModel.movieDetail.voteAverage?.description
-            vc.backdropImage.kf.setImage(with: viewModel.movieDetail.backdropPath?.createFullImageURL())
-            vc.posterImage.kf.setImage(with: viewModel.movieDetail.posterPath?.createFullImageURL())
+            vc.backdropImage.kf.setImage(with: viewModel.movieDetail.backdropPath?.createFullImageURL(), placeholder: UIImage(named: "backdropImage"))
+            vc.posterImage.kf.setImage(with: viewModel.movieDetail.posterPath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
             vc.overviewLabel.text = viewModel.movieDetail.overview
         })
     }

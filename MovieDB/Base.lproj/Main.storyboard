@@ -189,19 +189,19 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="722"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrX-vs-W8F">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="753"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NyO-L0-nqZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backdropImage" translatesAutoresizingMaskIntoConstraints="NO" id="NyO-L0-nqZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="280" id="2sv-42-0QD"/>
+                                                    <constraint firstAttribute="height" constant="260" id="2sv-42-0QD"/>
                                                 </constraints>
                                                 <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="8" right="8"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="RBk-mW-k0X">
-                                                <rect key="frame" x="20" y="210" width="364" height="182"/>
+                                                <rect key="frame" x="20" y="200" width="364" height="182"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0VP-Vo-G9x">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="posterImage" translatesAutoresizingMaskIntoConstraints="NO" id="0VP-Vo-G9x">
                                                         <rect key="frame" x="0.0" y="0.0" width="121" height="182"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="182" id="5WK-kF-Ddh"/>
@@ -267,8 +267,14 @@
                                                                                         <state key="normal" image="starSelected"/>
                                                                                     </button>
                                                                                 </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="114" id="X52-rr-crW"/>
+                                                                                </constraints>
                                                                             </stackView>
                                                                         </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="149.5" id="1Qf-Z1-uoO"/>
+                                                                        </constraints>
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
@@ -276,23 +282,23 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFd-aN-oXB">
-                                                <rect key="frame" x="187" y="120" width="40" height="40"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFd-aN-oXB">
+                                                <rect key="frame" x="187" y="110" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Yd7-1S-CZy"/>
                                                     <constraint firstAttribute="width" constant="40" id="zRg-AM-GAQ"/>
                                                 </constraints>
-                                                <state key="normal" title="Play"/>
+                                                <state key="normal" image="playIcon"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sz-yy-scM">
-                                                <rect key="frame" x="20" y="412" width="374" height="61"/>
+                                                <rect key="frame" x="20" y="402" width="374" height="61"/>
                                                 <string key="text">Fueled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne enlists the help of his newfound ally.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUL-Zg-6Fd">
-                                                <rect key="frame" x="0.0" y="493" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="483" width="414" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Cast &amp; Crew" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmy-QD-cju">
                                                         <rect key="frame" x="15" y="15" width="384" height="20"/>
@@ -311,23 +317,23 @@
                                                 </constraints>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HIb-qT-kcf">
-                                                <rect key="frame" x="20" y="563" width="374" height="165"/>
+                                                <rect key="frame" x="20" y="553" width="374" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="165" id="SWg-mS-biH"/>
+                                                    <constraint firstAttribute="height" constant="200" id="SWg-mS-biH"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ski-Gf-QcD">
-                                                    <size key="itemSize" width="101" height="149"/>
+                                                    <size key="itemSize" width="101" height="161"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="npq-g8-Hil">
-                                                        <rect key="frame" x="0.0" y="8" width="101" height="149"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="101" height="161"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="101" height="149"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="101" height="161"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </view>
                                                     </collectionViewCell>
@@ -341,11 +347,11 @@
                                                 <state key="normal" image="shareIcon"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15i-sM-w1H">
-                                                <rect key="frame" x="15" y="20" width="65" height="40"/>
+                                                <rect key="frame" x="15" y="20" width="72" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="kuc-Zt-8Ce"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                 <state key="normal" title="  Back" image="backButtonIcon"/>
                                             </button>
                                         </subviews>
@@ -354,6 +360,7 @@
                                             <constraint firstItem="7sz-yy-scM" firstAttribute="leading" secondItem="vrX-vs-W8F" secondAttribute="leading" constant="20" id="0p9-Ia-1M9"/>
                                             <constraint firstItem="7sz-yy-scM" firstAttribute="top" secondItem="RBk-mW-k0X" secondAttribute="bottom" constant="20" id="0yZ-fr-NyS"/>
                                             <constraint firstAttribute="trailing" secondItem="7sz-yy-scM" secondAttribute="trailing" constant="20" id="1wK-ix-MFC"/>
+                                            <constraint firstAttribute="bottom" secondItem="HIb-qT-kcf" secondAttribute="bottom" id="7ES-9g-Lp1"/>
                                             <constraint firstAttribute="trailing" secondItem="DD2-F0-9ha" secondAttribute="trailing" constant="15" id="8K8-B3-jwG"/>
                                             <constraint firstItem="RBk-mW-k0X" firstAttribute="leading" secondItem="vrX-vs-W8F" secondAttribute="leading" constant="20" symbolic="YES" id="9gA-wf-bcG"/>
                                             <constraint firstItem="HIb-qT-kcf" firstAttribute="top" secondItem="JUL-Zg-6Fd" secondAttribute="bottom" constant="20" id="C3w-Js-IlC"/>
@@ -368,7 +375,6 @@
                                             <constraint firstItem="RBk-mW-k0X" firstAttribute="top" secondItem="aFd-aN-oXB" secondAttribute="bottom" constant="50" id="aQP-hT-RxW"/>
                                             <constraint firstItem="NyO-L0-nqZ" firstAttribute="leading" secondItem="vrX-vs-W8F" secondAttribute="leading" id="bFh-W0-WbK"/>
                                             <constraint firstItem="15i-sM-w1H" firstAttribute="leading" secondItem="vrX-vs-W8F" secondAttribute="leading" constant="15" id="cLo-xD-MZH"/>
-                                            <constraint firstAttribute="bottom" secondItem="HIb-qT-kcf" secondAttribute="bottom" constant="31" id="djo-MN-wm4"/>
                                             <constraint firstAttribute="trailing" secondItem="RBk-mW-k0X" secondAttribute="trailing" constant="30" id="frq-yI-26v"/>
                                             <constraint firstItem="15i-sM-w1H" firstAttribute="top" secondItem="vrX-vs-W8F" secondAttribute="top" constant="20" id="mPF-YB-LNn"/>
                                             <constraint firstAttribute="trailing" secondItem="NyO-L0-nqZ" secondAttribute="trailing" id="oLw-d0-zNY"/>
@@ -417,6 +423,9 @@
     </scenes>
     <resources>
         <image name="backButtonIcon" width="12" height="21"/>
+        <image name="backdropImage" width="920" height="584"/>
+        <image name="playIcon" width="54" height="54"/>
+        <image name="posterImage" width="699" height="1023"/>
         <image name="shareIcon" width="22" height="21"/>
         <image name="starSelected" width="14" height="15"/>
     </resources>

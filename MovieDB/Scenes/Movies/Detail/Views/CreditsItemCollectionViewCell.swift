@@ -22,7 +22,7 @@ class CreditsItemCollectionViewCell: UICollectionViewCell {
 
     func bind(_ viewModel: CreditsItemViewModel?) {
         nameLabel.text = viewModel?.name
-        profileImage.kf.setImage(with: viewModel?.profilePath?.createFullImageURL())
+        profileImage.kf.setImage(with: viewModel?.profilePath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
         jobLabel.text = viewModel?.job
     }
 }
