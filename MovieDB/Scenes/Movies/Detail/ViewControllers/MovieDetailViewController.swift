@@ -17,7 +17,7 @@ class MovieDetailViewController: UIViewController {
     private let disposeBag = DisposeBag()
     internal var viewModel: MovieDetailViewModel!
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var creditsCollectionView: UICollectionView!
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
@@ -35,12 +35,17 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        registerCollectionViewCells()
         bindViewModel()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = true
+    }
+
+    private func registerCollectionViewCells() {
+        creditsCollectionView.register(UINib(nibName: CreditsItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: CreditsItemCollectionViewCell.reuseID)
     }
 
     private func bindViewModel() {
@@ -62,7 +67,17 @@ class MovieDetailViewController: UIViewController {
                 $0.disposed(by: disposeBag)
         }
 
+        output.credits.drive(
+            creditsCollectionView
+                .rx.items(cellIdentifier: CreditsItemCollectionViewCell.reuseID,
+                          cellType: CreditsItemCollectionViewCell.self)) {_, viewModel, cell in
+                            cell.bind(viewModel)
+            }.disposed(by: disposeBag)
+
         output.dismiss.drive()
+            .disposed(by: disposeBag)
+
+        output.credits.drive()
             .disposed(by: disposeBag)
     }
 

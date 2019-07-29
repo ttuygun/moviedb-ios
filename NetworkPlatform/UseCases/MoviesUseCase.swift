@@ -33,7 +33,7 @@ final class MoviesUseCase: Domain.MoviesUseCase {
         return network.detail(id: id)
     }
 
-    func credits(id: String) -> Observable<Credits> {
+    func credits(id: Int) -> Observable<Credits> {
         return network.credits(id: id)
     }
 }

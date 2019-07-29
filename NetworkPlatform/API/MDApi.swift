@@ -15,7 +15,7 @@ enum MDApi {
     case movieNowPlaying
     case moviePopular
     case movieDetail(id: Int)
-    case movieCredits(id: String)
+    case movieCredits(id: Int)
     // TV Show
     case tvShowTopRated
     case tvShowPopular

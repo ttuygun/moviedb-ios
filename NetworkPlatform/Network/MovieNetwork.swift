@@ -17,7 +17,7 @@ protocol MovieNetworkProtocol {
     func nowPlaying() -> Observable<[Movie]>
     func popular() -> Observable<[Movie]>
     func detail(id: Int) -> Observable<MovieDetail>
-    func credits(id: String) -> Observable<Credits>
+    func credits(id: Int) -> Observable<Credits>
 }
 
 public final class MovieNetwork: MovieNetworkProtocol {
@@ -60,7 +60,7 @@ public final class MovieNetwork: MovieNetworkProtocol {
             .asObservable()
     }
 
-    public func credits(id: String) -> Observable<Credits> {
+    public func credits(id: Int) -> Observable<Credits> {
         return provider.rx.request(.movieCredits(id: id))
             .filterSuccessfulStatusCodes()
             .debug()

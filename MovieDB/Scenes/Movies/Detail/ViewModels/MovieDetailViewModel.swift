@@ -20,6 +20,7 @@ final class MovieDetailViewModel: ViewModelType {
     struct Output {
         let fetching: Driver<Bool>
         let movieDetail: Driver<MovieDetailItemViewModel>
+        let credits: Driver<[CreditsItemViewModel]>
         let dismiss: Driver<Void>
         let error: Driver<Error>
     }
@@ -47,7 +48,21 @@ final class MovieDetailViewModel: ViewModelType {
                 .asDriverOnErrorJustComplete()
                 .map {
                     MovieDetailItemViewModel(with: $0)
-            }
+                }
+        }
+
+        let credits = input.trigger.flatMapLatest {
+            self.useCase.credits(id: self.movie.id ?? 0)
+                .trackActivity(activityIndicator)
+                .asDriverOnErrorJustComplete()
+                .map {
+                    $0.crew.map {
+                        CreditsItemViewModel(with: $0)
+                    }
+//                    $0.crew.map {
+//                        CreditsItemViewModel(with: $0)
+//                    }
+                }
         }
 
         let dismiss = Driver.of(input.backButtonTrigger)
@@ -56,6 +71,7 @@ final class MovieDetailViewModel: ViewModelType {
 
         return Output(fetching: fetching,
                       movieDetail: movieDetail,
+                      credits: credits,
                       dismiss: dismiss,
                       error: errors)
     }
