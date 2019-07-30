@@ -25,11 +25,11 @@ final class TVShowUseCase: Domain.TVShowsUseCase {
         return network.popular()
     }
 
-    func detail(id: String) -> Observable<TVShowDetail> {
+    func detail(id: Int) -> Observable<TVShowDetail> {
         return network.detail(id: id)
     }
 
-    func credits(id: String) -> Observable<Credits> {
+    func credits(id: Int) -> Observable<Credits> {
         return network.credits(id: id)
     }
 }

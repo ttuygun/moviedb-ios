@@ -12,6 +12,6 @@ import RxSwift
 public protocol TVShowsUseCase {
     func topRated() -> Observable<[TVShow]>
     func popular() -> Observable<[TVShow]>
-    func detail(id: String) -> Observable<TVShowDetail>
-    func credits(id: String) -> Observable<Credits>
+    func detail(id: Int) -> Observable<TVShowDetail>
+    func credits(id: Int) -> Observable<Credits>
 }

@@ -9,13 +9,13 @@
 import Foundation
 
 public struct TVShowDetail: Decodable {
-    let backdropPath: String
+    public let backdropPath: String
     let createdBy: [CreatedBy]
     let episodeRunTime: [Int]
     let firstAirDate: String
     let genres: [Genre]
     let homepage: String
-    let id: Int
+    public let id: Int
     let inProduction: Bool
     let languages: [String]
     let lastAirDate: String
@@ -31,7 +31,7 @@ public struct TVShowDetail: Decodable {
     let productionCompanies: [Network]
     let seasons: [Season]
     let status, type: String
-    let voteAverage: Double
+    public let voteAverage: Double
     let voteCount: Int
 
     enum CodingKeys: String, CodingKey {

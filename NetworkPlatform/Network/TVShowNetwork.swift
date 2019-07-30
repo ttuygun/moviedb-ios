@@ -15,8 +15,8 @@ import Moya
 protocol TVShowNetworkProtocol {
     func topRated() -> Observable<[TVShow]>
     func popular() -> Observable<[TVShow]>
-    func detail(id: String) -> Observable<TVShowDetail>
-    func credits(id: String) -> Observable<Credits>
+    func detail(id: Int) -> Observable<TVShowDetail>
+    func credits(id: Int) -> Observable<Credits>
 }
 
 public final class TVShowNetwork: TVShowNetworkProtocol {
@@ -43,7 +43,7 @@ public final class TVShowNetwork: TVShowNetworkProtocol {
             .asObservable()
     }
 
-    public func detail(id: String) -> Observable<TVShowDetail> {
+    public func detail(id: Int) -> Observable<TVShowDetail> {
         return provider.rx.request(.tvShowDetail(id: id))
             .filterSuccessfulStatusCodes()
             .debug()
@@ -51,7 +51,7 @@ public final class TVShowNetwork: TVShowNetworkProtocol {
             .asObservable()
     }
 
-    public func credits(id: String) -> Observable<Credits> {
+    public func credits(id: Int) -> Observable<Credits> {
         return provider.rx.request(.tvShowCredits(id: id))
             .filterSuccessfulStatusCodes()
             .debug()
