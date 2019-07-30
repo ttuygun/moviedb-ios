@@ -32,7 +32,6 @@
 		D593BDC322EE3E34003F8EC7 /* MovieDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D593BDC222EE3E34003F8EC7 /* MovieDetailNavigator.swift */; };
 		D5C0014722EDB486009112EF /* PosterItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0014622EDB486009112EF /* PosterItemCollectionViewCell.swift */; };
 		D5D954AA22EC68A700D1C00C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D954A922EC68A700D1C00C /* AppDelegate.swift */; };
-		D5D954AC22EC68A700D1C00C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D954AB22EC68A700D1C00C /* ViewController.swift */; };
 		D5D954AF22EC68A700D1C00C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D954AD22EC68A700D1C00C /* Main.storyboard */; };
 		D5D954B122EC68A800D1C00C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5D954B022EC68A800D1C00C /* Assets.xcassets */; };
 		D5D954B422EC68A800D1C00C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D954B222EC68A800D1C00C /* LaunchScreen.storyboard */; };
@@ -160,7 +159,6 @@
 		D5C0014622EDB486009112EF /* PosterItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		D5D954A622EC68A700D1C00C /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D954A922EC68A700D1C00C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D5D954AB22EC68A700D1C00C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D5D954AE22EC68A700D1C00C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5D954B022EC68A800D1C00C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5D954B322EC68A800D1C00C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -469,7 +467,6 @@
 				D5194CC822ECED12001FB3EF /* Common */,
 				D5D9553F22ECA79500D1C00C /* Application */,
 				D5D954A922EC68A700D1C00C /* AppDelegate.swift */,
-				D5D954AB22EC68A700D1C00C /* ViewController.swift */,
 				D5D954AD22EC68A700D1C00C /* Main.storyboard */,
 				D5D954B022EC68A800D1C00C /* Assets.xcassets */,
 				D5D954B222EC68A800D1C00C /* LaunchScreen.storyboard */,
@@ -849,7 +846,6 @@
 				D593BDC322EE3E34003F8EC7 /* MovieDetailNavigator.swift in Sources */,
 				D5E33EBF22F0E4350027B85E /* TVShowDetailItemViewModel.swift in Sources */,
 				D5E33EB922F0DD3E0027B85E /* PopularTVShowsTableViewCell.swift in Sources */,
-				D5D954AC22EC68A700D1C00C /* ViewController.swift in Sources */,
 				D5194CDD22ECEE98001FB3EF /* MoviesNavigator.swift in Sources */,
 				D5194CE722ECF657001FB3EF /* MoviesViewController.swift in Sources */,
 				D5194CE122ECF1D3001FB3EF /* MovieItemViewModel.swift in Sources */,
@@ -980,7 +976,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1035,7 +1031,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1064,7 +1060,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttuygun.MovieDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1087,7 +1083,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttuygun.MovieDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
