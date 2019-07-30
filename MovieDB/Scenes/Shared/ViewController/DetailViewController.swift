@@ -12,7 +12,7 @@ import RxSwift
 import Domain
 import RxKingfisher
 
-class MovieDetailViewController: UIViewController {
+class DetailViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
     internal var viewModelMovie: MovieDetailViewModel!

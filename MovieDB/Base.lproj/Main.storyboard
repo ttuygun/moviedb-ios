@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="1261" y="-7"/>
         </scene>
-        <!--Movie Detail View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="yCc-vR-B5D">
             <objects>
-                <viewController storyboardIdentifier="MovieDetailViewController" id="QA1-7e-8T4" customClass="MovieDetailViewController" customModule="MovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="QA1-7e-8T4" customClass="DetailViewController" customModule="MovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ihT-7G-iaW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,24 +246,24 @@
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="0QB-rm-ay8">
                                                                                 <rect key="frame" x="35.5" y="0.0" width="114" height="22"/>
                                                                                 <subviews>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYl-Mr-ifl">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYl-Mr-ifl">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="14" height="22"/>
                                                                                         <state key="normal" image="starSelected"/>
                                                                                     </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="470-lN-lmy">
-                                                                                        <rect key="frame" x="27" y="0.0" width="16" height="22"/>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="470-lN-lmy">
+                                                                                        <rect key="frame" x="25" y="0.0" width="14" height="22"/>
                                                                                         <state key="normal" image="starSelected"/>
                                                                                     </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGX-et-O31">
-                                                                                        <rect key="frame" x="54" y="0.0" width="16" height="22"/>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGX-et-O31">
+                                                                                        <rect key="frame" x="50" y="0.0" width="14" height="22"/>
                                                                                         <state key="normal" image="starSelected"/>
                                                                                     </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3On-a6-dC2">
-                                                                                        <rect key="frame" x="81" y="0.0" width="16" height="22"/>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3On-a6-dC2">
+                                                                                        <rect key="frame" x="75" y="0.0" width="14" height="22"/>
                                                                                         <state key="normal" image="starSelected"/>
                                                                                     </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goZ-jb-QaJ">
-                                                                                        <rect key="frame" x="108" y="0.0" width="6" height="22"/>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goZ-jb-QaJ">
+                                                                                        <rect key="frame" x="100" y="0.0" width="14" height="22"/>
                                                                                         <state key="normal" image="starSelected"/>
                                                                                     </button>
                                                                                 </subviews>
@@ -340,14 +340,14 @@
                                                 </cells>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DD2-F0-9ha">
-                                                <rect key="frame" x="383" y="20" width="16" height="40"/>
+                                                <rect key="frame" x="377" y="20" width="22" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="4W6-gT-7WW"/>
                                                 </constraints>
                                                 <state key="normal" image="shareIcon"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15i-sM-w1H">
-                                                <rect key="frame" x="15" y="20" width="76" height="40"/>
+                                                <rect key="frame" x="15" y="20" width="72" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="kuc-Zt-8Ce"/>
                                                 </constraints>

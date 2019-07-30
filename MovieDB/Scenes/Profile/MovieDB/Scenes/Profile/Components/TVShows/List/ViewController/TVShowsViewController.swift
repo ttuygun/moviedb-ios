@@ -27,7 +27,7 @@ class TVShowsViewController: UIViewController {
     }
 
     private func registerCollectionViewCells() {
-        topRatedTVShowsCollectionView.register(UINib(nibName: MovieItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: MovieItemCollectionViewCell.reuseID)
+        topRatedTVShowsCollectionView.register(UINib(nibName: PosterItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: PosterItemCollectionViewCell.reuseID)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,8 +52,8 @@ class TVShowsViewController: UIViewController {
 
         output.topRatedTVShows.drive(
             topRatedTVShowsCollectionView
-                .rx.items(cellIdentifier: MovieItemCollectionViewCell.reuseID,
-                          cellType: MovieItemCollectionViewCell.self)) {_, viewModel, cell in
+                .rx.items(cellIdentifier: PosterItemCollectionViewCell.reuseID,
+                          cellType: PosterItemCollectionViewCell.self)) {_, viewModel, cell in
                             cell.bindTVShow(viewModel)
             }.disposed(by: disposeBag)
 

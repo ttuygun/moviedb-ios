@@ -30,8 +30,8 @@ class MoviesViewController: UIViewController {
 
     private func registerCollectionViewCells() {
         topRatedMoviesCollectionView.register(UINib(nibName: MovieBackDropItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: MovieBackDropItemCollectionViewCell.reuseID)
-        nowPlayingMoviesCollectionView.register(UINib(nibName: MovieItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: MovieItemCollectionViewCell.reuseID)
-        popularMoviesCollectionView.register(UINib(nibName: MovieItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: MovieItemCollectionViewCell.reuseID)
+        nowPlayingMoviesCollectionView.register(UINib(nibName: PosterItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: PosterItemCollectionViewCell.reuseID)
+        popularMoviesCollectionView.register(UINib(nibName: PosterItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: PosterItemCollectionViewCell.reuseID)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -64,15 +64,15 @@ class MoviesViewController: UIViewController {
 
         output.nowPlayingMovies.drive(
             nowPlayingMoviesCollectionView
-                .rx.items(cellIdentifier: MovieItemCollectionViewCell.reuseID,
-                          cellType: MovieItemCollectionViewCell.self)) {_, viewModel, cell in
+                .rx.items(cellIdentifier: PosterItemCollectionViewCell.reuseID,
+                          cellType: PosterItemCollectionViewCell.self)) {_, viewModel, cell in
                             cell.bindMovie(viewModel)
             }.disposed(by: disposeBag)
 
         output.popularMovies.drive(
             popularMoviesCollectionView
-                .rx.items(cellIdentifier: MovieItemCollectionViewCell.reuseID,
-                          cellType: MovieItemCollectionViewCell.self)) {_, viewModel, cell in
+                .rx.items(cellIdentifier: PosterItemCollectionViewCell.reuseID,
+                          cellType: PosterItemCollectionViewCell.self)) {_, viewModel, cell in
                             cell.bindMovie(viewModel)
             }.disposed(by: disposeBag)
 
