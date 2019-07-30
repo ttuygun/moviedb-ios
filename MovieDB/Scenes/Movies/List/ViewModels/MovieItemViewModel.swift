@@ -15,6 +15,7 @@ final class MovieItemViewModel {
     let title: String?
     let releaseDate: String?
     var posterPathURL: URL?
+    var backdropPathURL: URL?
 
     init(with movie: Movie) {
         self.movie = movie
@@ -22,6 +23,9 @@ final class MovieItemViewModel {
         releaseDate = movie.releaseDate
         if let posterPath = movie.posterPath, let url = URL(string: posterPath.transformPosterURL()) {
             posterPathURL = url
+        }
+        if let backdropPath = movie.backdropPath, let url = URL(string: backdropPath.transformPosterURL()) {
+            backdropPathURL = url
         }
     }
 }

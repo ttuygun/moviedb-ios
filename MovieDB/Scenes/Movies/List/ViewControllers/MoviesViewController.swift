@@ -29,7 +29,7 @@ class MoviesViewController: UIViewController {
     }
 
     private func registerCollectionViewCells() {
-        topRatedMoviesCollectionView.register(UINib(nibName: MovieItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: MovieItemCollectionViewCell.reuseID)
+        topRatedMoviesCollectionView.register(UINib(nibName: MovieBackDropItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: MovieBackDropItemCollectionViewCell.reuseID)
         nowPlayingMoviesCollectionView.register(UINib(nibName: MovieItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: MovieItemCollectionViewCell.reuseID)
         popularMoviesCollectionView.register(UINib(nibName: MovieItemCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: MovieItemCollectionViewCell.reuseID)
     }
@@ -55,15 +55,15 @@ class MoviesViewController: UIViewController {
 
         let output = viewModel.transform(input: input)
 
-        output.nowPlayingMovies.drive(
-            nowPlayingMoviesCollectionView
-            .rx.items(cellIdentifier: MovieItemCollectionViewCell.reuseID,
-                            cellType: MovieItemCollectionViewCell.self)) {_, viewModel, cell in
-                                cell.bind(viewModel)
-        }.disposed(by: disposeBag)
-
         output.topRatedMovies.drive(
             topRatedMoviesCollectionView
+                .rx.items(cellIdentifier: MovieBackDropItemCollectionViewCell.reuseID,
+                          cellType: MovieBackDropItemCollectionViewCell.self)) {_, viewModel, cell in
+                            cell.bind(viewModel)
+            }.disposed(by: disposeBag)
+
+        output.nowPlayingMovies.drive(
+            nowPlayingMoviesCollectionView
                 .rx.items(cellIdentifier: MovieItemCollectionViewCell.reuseID,
                           cellType: MovieItemCollectionViewCell.self)) {_, viewModel, cell in
                             cell.bind(viewModel)

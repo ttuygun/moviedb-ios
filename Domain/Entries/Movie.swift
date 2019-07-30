@@ -19,7 +19,7 @@ public struct Movie: Decodable {
     let originalLanguage: String?
     let originalTitle: String?
     let genreIDS: [Int]?
-    let backdropPath: String?
+    public let backdropPath: String?
     let adult: Bool?
     public let overview, releaseDate: String?
 
