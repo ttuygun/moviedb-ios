@@ -36,6 +36,10 @@ final class Application {
                                                              image: UIImage(named: "iconTV"),
                                                              selectedImage: UIImage(named: "iconTVSelected"))
 
+        let tvShowsNavigator = DefaultTVShowsNavigator(services: networkUseCaseProvider,
+                                                       navigationController: tvShowsNavigationController,
+                                                       storyboard: storyboard)
+
         let profileNavigationController = UINavigationController()
         profileNavigationController.tabBarItem = UITabBarItem(title: "Profile",
                                                              image: UIImage(named: "iconProfile"),
@@ -50,6 +54,6 @@ final class Application {
         window.rootViewController = tabBarController
 
         moviesNavigator.toMovies()
-
+        tvShowsNavigator.toTVShows()
     }
 }

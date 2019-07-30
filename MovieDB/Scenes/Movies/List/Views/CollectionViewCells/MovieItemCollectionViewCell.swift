@@ -18,7 +18,12 @@ class MovieItemCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-    func bind(_ viewModel: MovieItemViewModel) {
+    func bindMovie(_ viewModel: MovieItemViewModel) {
+        titleLabel.text = viewModel.title
+        posterImage.kf.setImage(with: viewModel.posterPathURL)
+    }
+
+    func bindTVShow(_ viewModel: TVShowItemViewModel) {
         titleLabel.text = viewModel.title
         posterImage.kf.setImage(with: viewModel.posterPathURL)
     }
