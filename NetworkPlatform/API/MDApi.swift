@@ -19,8 +19,8 @@ enum MDApi {
     // TV Show
     case tvShowTopRated
     case tvShowPopular
-    case tvShowDetail(id: String)
-    case tvShowCredits(id: String)
+    case tvShowDetail(id: Int)
+    case tvShowCredits(id: Int)
 }
 
 extension MDApi: TargetType, PluginType {
