@@ -65,6 +65,10 @@ class TVShowsViewController: UIViewController {
             .drive()
             .disposed(by: disposeBag)
 
+        output.selectedPopular
+            .drive()
+            .disposed(by: disposeBag)
+
     }
 
 }

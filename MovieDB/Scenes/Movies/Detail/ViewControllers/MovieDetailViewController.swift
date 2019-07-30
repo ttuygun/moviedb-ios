@@ -15,7 +15,8 @@ import RxKingfisher
 class MovieDetailViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
-    internal var viewModel: MovieDetailViewModel!
+    internal var viewModelMovie: MovieDetailViewModel!
+    internal var viewModelTVShow: TVShowDetailViewModel!
 
     @IBOutlet weak var creditsCollectionView: UICollectionView!
 
@@ -36,7 +37,8 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
 
         registerCollectionViewCells()
-        bindViewModel()
+        bindViewModelMovie()
+        bindViewModelTVShow()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -50,21 +52,22 @@ class MovieDetailViewController: UIViewController {
          forCellWithReuseIdentifier: CreditsItemCollectionViewCell.reuseID)
     }
 
-    private func bindViewModel() {
-        assert(viewModel != nil)
-
+    private func bindViewModelMovie() {
+        guard let viewModelMovie = viewModelMovie else {
+            return
+        }
         let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
             .mapToVoid()
             .asDriverOnErrorJustComplete()
 
         let input = MovieDetailViewModel
             .Input(trigger: Driver.merge(viewWillAppear),
-         backButtonTrigger: backButton.rx.tap.asDriver())
+                   backButtonTrigger: backButton.rx.tap.asDriver())
 
-        let output = viewModel.transform(input: input)
+        let output = viewModelMovie.transform(input: input)
 
         [output.movieDetail.drive(movieDetailBinding),
-        output.error.drive(errorBinding)]
+         output.error.drive(errorBinding)]
             .forEach {
                 $0.disposed(by: disposeBag)
         }
@@ -81,6 +84,42 @@ class MovieDetailViewController: UIViewController {
 
         output.credits.drive()
             .disposed(by: disposeBag)
+
+    }
+
+    private func bindViewModelTVShow() {
+        guard let viewModelTVShow = viewModelTVShow else {
+            return
+        }
+        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+            .mapToVoid()
+            .asDriverOnErrorJustComplete()
+
+        let input = TVShowDetailViewModel
+            .Input(trigger: Driver.merge(viewWillAppear),
+                   backButtonTrigger: backButton.rx.tap.asDriver())
+
+        let output = viewModelTVShow.transform(input: input)
+
+        [output.tvShowDetail.drive(tvShowDetailBinding),
+         output.error.drive(errorBinding)]
+            .forEach {
+                $0.disposed(by: disposeBag)
+        }
+
+        output.credits.drive(
+            creditsCollectionView
+                .rx.items(cellIdentifier: CreditsItemCollectionViewCell.reuseID,
+                          cellType: CreditsItemCollectionViewCell.self)) {_, viewModel, cell in
+                            cell.bind(viewModel)
+            }.disposed(by: disposeBag)
+
+        output.dismiss.drive()
+            .disposed(by: disposeBag)
+
+        output.credits.drive()
+            .disposed(by: disposeBag)
+
     }
 
     var movieDetailBinding: Binder<MovieDetailItemViewModel> {
@@ -90,6 +129,16 @@ class MovieDetailViewController: UIViewController {
             vc.backdropImage.kf.setImage(with: viewModel.movieDetail.backdropPath?.createFullImageURL(), placeholder: UIImage(named: "backdropImage"))
             vc.posterImage.kf.setImage(with: viewModel.movieDetail.posterPath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
             vc.overviewLabel.text = viewModel.movieDetail.overview
+        })
+    }
+
+    var tvShowDetailBinding: Binder<TVShowDetailItemViewModel> {
+        return Binder(self, binding: { (vc, viewModel) in
+            vc.titleLabel.text = viewModel.tvShowDetail.name
+            vc.voteLabel.text = viewModel.tvShowDetail.voteAverage?.description
+            vc.backdropImage.kf.setImage(with: viewModel.tvShowDetail.backdropPath?.createFullImageURL(), placeholder: UIImage(named: "backdropImage"))
+            vc.posterImage.kf.setImage(with: viewModel.tvShowDetail.posterPath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
+            vc.overviewLabel.text = viewModel.tvShowDetail.overview
         })
     }
 
@@ -105,5 +154,4 @@ class MovieDetailViewController: UIViewController {
             vc.present(alert, animated: true, completion: nil)
         })
     }
-
 }

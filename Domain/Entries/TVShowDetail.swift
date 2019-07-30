@@ -9,30 +9,31 @@
 import Foundation
 
 public struct TVShowDetail: Decodable {
-    public let backdropPath: String
-    let createdBy: [CreatedBy]
-    let episodeRunTime: [Int]
-    let firstAirDate: String
-    let genres: [Genre]
-    let homepage: String
-    public let id: Int
-    let inProduction: Bool
-    let languages: [String]
-    let lastAirDate: String
-    let lastEpisodeToAir: EpisodeToAir
-    let name: String
+    public let backdropPath: String?
+    let createdBy: [CreatedBy]?
+    let episodeRunTime: [Int]?
+    let firstAirDate: String?
+    let genres: [Genre]?
+    let homepage: String?
+    public let id: Int?
+    let inProduction: Bool?
+    let languages: [String]?
+    let lastAirDate: String?
+    let lastEpisodeToAir: EpisodeToAir?
+    public let name: String?
     let nextEpisodeToAir: EpisodeToAir?
-    let networks: [Network]
-    let numberOfEpisodes, numberOfSeasons: Int
-    let originCountry: [String]
-    let originalLanguage, originalName, overview: String
-    let popularity: Double
-    let posterPath: String
-    let productionCompanies: [Network]
-    let seasons: [Season]
-    let status, type: String
-    public let voteAverage: Double
-    let voteCount: Int
+    let networks: [Network]?
+    let numberOfEpisodes, numberOfSeasons: Int?
+    let originCountry: [String]?
+    let originalLanguage, originalName: String?
+    public let overview: String?
+    let popularity: Double?
+    public let posterPath: String?
+    let productionCompanies: [Network]?
+    let seasons: [Season]?
+    let status, type: String?
+    public let voteAverage: Double?
+    let voteCount: Int?
 
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
@@ -63,10 +64,10 @@ public struct TVShowDetail: Decodable {
 
 // MARK: - CreatedBy
 struct CreatedBy: Decodable {
-    let id: Int
-    let creditID, name: String
-    let gender: Int
-    let profilePath: String
+    let id: Int?
+    let creditID, name: String?
+    let gender: Int?
+    let profilePath: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -79,13 +80,13 @@ struct CreatedBy: Decodable {
 
 // MARK: - LastEpisodeToAir
 struct EpisodeToAir: Decodable {
-    let airDate: String
-    let episodeNumber, id: Int
-    let name, overview, productionCode: String
-    let seasonNumber, showID: Int
-    let stillPath: String
-    let voteAverage: Double
-    let voteCount: Int
+    let airDate: String?
+    let episodeNumber, id: Int?
+    let name, overview, productionCode: String?
+    let seasonNumber, showID: Int?
+    let stillPath: String?
+    let voteAverage: Double?
+    let voteCount: Int?
 
     enum CodingKeys: String, CodingKey {
         case airDate = "air_date"
@@ -102,10 +103,10 @@ struct EpisodeToAir: Decodable {
 
 // MARK: - Network
 struct Network: Decodable {
-    let name: String
-    let id: Int
+    let name: String?
+    let id: Int?
     let logoPath: String?
-    let originCountry: String
+    let originCountry: String?
 
     enum CodingKeys: String, CodingKey {
         case name, id
@@ -116,10 +117,10 @@ struct Network: Decodable {
 
 // MARK: - Season
 struct Season: Decodable {
-    let airDate: String
-    let episodeCount, id: Int
-    let name, overview, posterPath: String
-    let seasonNumber: Int
+    let airDate: String?
+    let episodeCount, id: Int?
+    let name, overview, posterPath: String?
+    let seasonNumber: Int?
 
     enum CodingKeys: String, CodingKey {
         case airDate = "air_date"

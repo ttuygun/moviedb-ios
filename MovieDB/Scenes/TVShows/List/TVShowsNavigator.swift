@@ -35,10 +35,10 @@ class DefaultTVShowsNavigator: TVShowsNavigator {
     }
 
     func toTVShowDetail(_ tvShow: TVShow) {
-//        let navigator = DefaultMovieDetailNavigator(navigationController: navigationController)
-//        let viewModel = MovieDetailViewModel(useCase: services.makeMoviesUseCase(), navigator: navigator, movie: movie)
-//        let vc = storyboard.instantiateViewController(ofType: MovieDetailViewController.self)
-//        vc.viewModel = viewModel
-//        navigationController.pushViewController(vc, animated: true)
+        let navigator = DefaultTVShowDetailNavigator(navigationController: navigationController)
+        let viewModel = TVShowDetailViewModel(useCase: services.makeTVShowsUseCase(), navigator: navigator, tvShow: tvShow)
+        let vc = storyboard.instantiateViewController(ofType: MovieDetailViewController.self)
+        vc.viewModelTVShow = viewModel
+        navigationController.pushViewController(vc, animated: true)
     }
 }
