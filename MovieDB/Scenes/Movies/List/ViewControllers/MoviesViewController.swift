@@ -47,19 +47,13 @@ class MoviesViewController: UIViewController {
             .mapToVoid()
             .asDriverOnErrorJustComplete()
 
-        let selection = Driver.merge(nowPlayingMoviesCollectionView.rx.itemSelected.asDriver(),
-                                    popularMoviesCollectionView.rx.itemSelected.asDriver(),
-                                    topRatedMoviesCollectionView.rx.itemSelected.asDriver())
-
         let input = MoviesViewModel
-            .Input(trigger: Driver.merge(viewWillAppear), selection: selection)
+            .Input(trigger: Driver.merge(viewWillAppear),
+                   selectionTopRated: topRatedMoviesCollectionView.rx.itemSelected.asDriver(),
+                   selectionNowPlaying: nowPlayingMoviesCollectionView.rx.itemSelected.asDriver(),
+                   selectionPopular: popularMoviesCollectionView.rx.itemSelected.asDriver())
 
         let output = viewModel.transform(input: input)
-
-        selection.asObservable().subscribe(onNext: { (indexPath) in
-            debugPrint("selection=")
-            debugPrint(indexPath)
-        })
 
         output.nowPlayingMovies.drive(
             nowPlayingMoviesCollectionView
@@ -82,8 +76,15 @@ class MoviesViewController: UIViewController {
                             cell.bind(viewModel)
             }.disposed(by: disposeBag)
 
-        output.selectedMovie
+        output.selectedTopRated
             .drive()
             .disposed(by: disposeBag)
+        output.selectedNowPlaying
+            .drive()
+            .disposed(by: disposeBag)
+        output.selectedPopular
+            .drive()
+            .disposed(by: disposeBag)
+
     }
 }

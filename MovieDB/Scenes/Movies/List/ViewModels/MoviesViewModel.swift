@@ -14,15 +14,22 @@ import Domain
 final class MoviesViewModel: ViewModelType {
     struct Input {
         let trigger: Driver<Void>
-        let selection: Driver<IndexPath>
+        let selectionTopRated: Driver<IndexPath>
+        let selectionNowPlaying: Driver<IndexPath>
+        let selectionPopular: Driver<IndexPath>
     }
 
     struct Output {
         let fetching: Driver<Bool>
+
         let topRatedMovies: Driver<[MovieItemViewModel]>
         let nowPlayingMovies: Driver<[MovieItemViewModel]>
         let popularMovies: Driver<[MovieItemViewModel]>
-        let selectedMovie: Driver<Movie>
+
+        let selectedTopRated: Driver<Movie>
+        let selectedNowPlaying: Driver<Movie>
+        let selectedPopular: Driver<Movie>
+
         let error: Driver<Error>
     }
 
@@ -62,7 +69,17 @@ final class MoviesViewModel: ViewModelType {
         let fetching = activityIndicator.asDriver()
         let errors = errorTracker.asDriver()
 
-        let selectedMovie = input.selection
+        let selectedTopRated = input.selectionTopRated
+            .withLatestFrom(topRatedMovies) { (indexPath, movies) -> Movie in
+                movies[indexPath.row].movie
+            }.do(onNext: navigator.toMovieDetail)
+
+        let selectedNowPlaying = input.selectionNowPlaying
+            .withLatestFrom(nowPlayingdMovies) { (indexPath, movies) -> Movie in
+                movies[indexPath.row].movie
+            }.do(onNext: navigator.toMovieDetail)
+
+        let selectedPopular = input.selectionPopular
             .withLatestFrom(popularMovies) { (indexPath, movies) -> Movie in
                 movies[indexPath.row].movie
             }.do(onNext: navigator.toMovieDetail)
@@ -71,7 +88,9 @@ final class MoviesViewModel: ViewModelType {
                       topRatedMovies: topRatedMovies,
                       nowPlayingMovies: nowPlayingdMovies,
                       popularMovies: popularMovies,
-                      selectedMovie: selectedMovie,
+                      selectedTopRated: selectedTopRated,
+                      selectedNowPlaying: selectedNowPlaying,
+                      selectedPopular: selectedPopular,
                       error: errors)
     }
 }
