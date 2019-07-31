@@ -51,7 +51,11 @@ final class Application {
         UITabBar.appearance().tintColor = UIColor(hue:0.98, saturation:0.89, brightness:0.84, alpha:1.00)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().isTranslucent = true
 
+        let profileNavigator = DefaultProfileNavigator(services: networkUseCaseProvider,
+                                                       navigationController: profileNavigationController,
+                                                       storyboard: storyboard)
 
         tabBarController.viewControllers = [
             moviesNavigationController,
@@ -62,5 +66,6 @@ final class Application {
 
         moviesNavigator.toMovies()
         tvShowsNavigator.toTVShows()
+        profileNavigator.toProfile()
     }
 }

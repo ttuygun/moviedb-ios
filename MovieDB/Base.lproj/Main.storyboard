@@ -598,6 +598,35 @@
             </objects>
             <point key="canvasLocation" x="1260.8695652173915" y="602.67857142857144"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="wwc-Po-HmM">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="nsI-pY-IJy" customClass="ProfileViewController" customModule="MovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wcg-Tu-OuF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWG-Vx-UKf">
+                                <rect key="frame" x="20" y="44" width="374" height="27.5"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fXQ-yI-Z1c" firstAttribute="trailing" secondItem="nWG-Vx-UKf" secondAttribute="trailing" constant="20" id="0QS-ti-09J"/>
+                            <constraint firstItem="nWG-Vx-UKf" firstAttribute="leading" secondItem="fXQ-yI-Z1c" secondAttribute="leading" constant="20" id="14U-lt-fQU"/>
+                            <constraint firstItem="nWG-Vx-UKf" firstAttribute="top" secondItem="fXQ-yI-Z1c" secondAttribute="top" id="cFf-9J-ftW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fXQ-yI-Z1c"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="800"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0tg-XS-SKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1243" y="1217"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backButtonIcon" width="12" height="21"/>
