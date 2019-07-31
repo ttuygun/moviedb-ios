@@ -20,7 +20,7 @@ import Kingfisher
     }
 
     // ImageView Attributes
-    @IBInspectable var image: UIImage? { didSet {  layoutImage() } }
+//    @IBInspectable var image: UIImage? { didSet {  layoutImage() } }
     @IBInspectable var imageContentMode: UIView.ContentMode = .scaleAspectFit { didSet { layoutImage() } }
 
     // Shadow Attributes
@@ -55,7 +55,7 @@ import Kingfisher
     fileprivate func layoutImage() {
         imageView.frame = CGRect(x: 0.0, y: 0.0, width: self.bounds.width, height: self.bounds.height)
         self.addSubview(imageView)
-        imageView.image = self.image
+//        imageView.image = self.image
         imageView.contentMode = self.contentMode
         imageView.layer.cornerRadius = self.layer.cornerRadius
         imageView.layer.masksToBounds = true
