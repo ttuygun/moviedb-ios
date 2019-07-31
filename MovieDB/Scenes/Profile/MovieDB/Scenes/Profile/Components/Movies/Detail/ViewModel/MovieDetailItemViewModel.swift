@@ -10,6 +10,8 @@ import Foundation
 import Domain
 
 final class MovieDetailItemViewModel {
+    let title: String
+    let overview: String
     let movieDetail: MovieDetail
     var genres: String = ""
     var popularity: String = ""
@@ -25,7 +27,8 @@ final class MovieDetailItemViewModel {
         if let popularity = movieDetail.popularity {
             self.popularity = "\(popularity) People watching"
         }
-
+        self.title = movieDetail.title ?? ""
+        self.overview = movieDetail.overview ?? ""
     }
 }
 

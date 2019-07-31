@@ -10,6 +10,8 @@ import Foundation
 import Domain
 
 final class TVShowDetailItemViewModel {
+    let title: String
+    let overview: String
     let tvShowDetail: TVShowDetail
     var genres: String = ""
     var popularity: String = ""
@@ -25,5 +27,7 @@ final class TVShowDetailItemViewModel {
         if let popularity = tvShowDetail.popularity {
             self.popularity = "\(popularity) People watching"
         }
+        self.title = tvShowDetail.name ?? ""
+        self.overview = tvShowDetail.overview ?? ""
     }
 }

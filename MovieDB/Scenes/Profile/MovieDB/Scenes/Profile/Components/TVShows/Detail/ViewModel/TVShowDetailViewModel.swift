@@ -15,6 +15,7 @@ final class TVShowDetailViewModel: ViewModelType {
     struct Input {
         let trigger: Driver<Void>
         let backButtonTrigger: Driver<Void>
+        let shareButtonTrigger: Driver<Void>
     }
 
     struct Output {
@@ -22,6 +23,7 @@ final class TVShowDetailViewModel: ViewModelType {
         let tvShowDetail: Driver<TVShowDetailItemViewModel>
         let credits: Driver<[CreditsItemViewModel]>
         let dismiss: Driver<Void>
+        let shareAction: Driver<TVShowDetailItemViewModel>
         let error: Driver<Error>
     }
 
@@ -69,10 +71,16 @@ final class TVShowDetailViewModel: ViewModelType {
             .merge()
             .do(onNext: navigator.toTVShows)
 
+        let shareAction = Driver.of(input.shareButtonTrigger)
+            .merge()
+            .withLatestFrom(tvShowDetail)
+            .do(onNext: navigator.shareTVShowAction)
+
         return Output(fetching: fetching,
                       tvShowDetail: tvShowDetail,
                       credits: credits,
                       dismiss: dismiss,
+                      shareAction: shareAction,
                       error: errors)
     }
 }

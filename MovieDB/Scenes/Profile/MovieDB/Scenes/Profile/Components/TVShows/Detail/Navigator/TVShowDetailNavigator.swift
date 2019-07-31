@@ -11,6 +11,7 @@ import UIKit
 
 protocol TVShowDetailNavigator {
     func toTVShows()
+    func shareTVShowAction(_ tvShowDetail: TVShowDetailItemViewModel)
 }
 
 final class DefaultTVShowDetailNavigator: TVShowDetailNavigator {
@@ -22,6 +23,13 @@ final class DefaultTVShowDetailNavigator: TVShowDetailNavigator {
 
     func toTVShows() {
         navigationController.popViewController(animated: true)
+    }
+
+    func shareTVShowAction(_ tvShowDetail: TVShowDetailItemViewModel) {
+        let vc = UIActivityViewController(activityItems: [tvShowDetail.title,
+                                                          tvShowDetail.overview],
+                                          applicationActivities: nil)
+        navigationController.present(vc, animated: true)
     }
 
 }

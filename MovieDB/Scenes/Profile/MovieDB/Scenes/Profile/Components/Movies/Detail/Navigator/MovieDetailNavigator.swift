@@ -11,6 +11,7 @@ import UIKit
 
 protocol MovieDetailNavigator {
     func toMovies()
+    func shareMovieAction(_ movie: MovieDetailItemViewModel)
 }
 
 final class DefaultMovieDetailNavigator: MovieDetailNavigator {
@@ -24,4 +25,10 @@ final class DefaultMovieDetailNavigator: MovieDetailNavigator {
         navigationController.popViewController(animated: true)
     }
 
+    func shareMovieAction(_ movie: MovieDetailItemViewModel) {
+        let vc = UIActivityViewController(activityItems: [movie.title,
+                                                          movie.overview],
+                                          applicationActivities: nil)
+        navigationController.present(vc, animated: true)
+    }
 }

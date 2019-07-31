@@ -52,7 +52,6 @@ final class Application {
 
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().isTranslucent = true
 
         let profileNavigator = DefaultProfileNavigator(services: networkUseCaseProvider,
                                                        navigationController: profileNavigationController,
