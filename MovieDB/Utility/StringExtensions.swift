@@ -15,7 +15,7 @@ extension String {
     }
 
     func createFullImageURL() -> URL? {
-        let path = "https://image.tmdb.org/t/p/original\(self)"
+        let path = "https://image.tmdb.org/t/p/w500\(self)"
         if let url = URL(string: path) {
             return url
         }
