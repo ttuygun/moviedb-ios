@@ -13,6 +13,7 @@ class PopularTVShowsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backdropImage: SwiftShadowImageView!
     @IBOutlet weak var voteLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,7 @@ class PopularTVShowsTableViewCell: UITableViewCell {
     func bind(_ viewModel: TVShowItemViewModel) {
         backdropImage.imageView.kf.setImage(with: viewModel.backdropPathURL)
         voteLabel.text = viewModel.voteAverage
+        titleLabel.text = viewModel.title?.uppercased()
     }
 
 }
