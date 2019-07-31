@@ -23,7 +23,7 @@ final class Application {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         let moviesNavigationController = UINavigationController()
-        moviesNavigationController.tabBarItem = UITabBarItem(title: "Movies",
+        moviesNavigationController.tabBarItem = UITabBarItem(title: "MOVIES",
                                                          image: UIImage(named: "moviesIcon"),
                                                          selectedImage: UIImage(named: "moviesIconSelected"))
 
@@ -41,14 +41,15 @@ final class Application {
                                                        storyboard: storyboard)
 
         let profileNavigationController = UINavigationController()
-        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile",
+        profileNavigationController.tabBarItem = UITabBarItem(title: "PROFILE",
                                                              image: UIImage(named: "profileIcon"),
                                                              selectedImage: UIImage(named: "profileIconSelected"))
 
         
         let tabBarController = UITabBarController()
+        tabBarController.tabBar.tintAdjustmentMode = .normal
+        tabBarController.tabBar.tintColor = UIColor(hue:0.98, saturation:0.89, brightness:0.84, alpha:1.00)
 
-        UITabBar.appearance().tintColor = UIColor(hue:0.98, saturation:0.89, brightness:0.84, alpha:1.00)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().isTranslucent = true
