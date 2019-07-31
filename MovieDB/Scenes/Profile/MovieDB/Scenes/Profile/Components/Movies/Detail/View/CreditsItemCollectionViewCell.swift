@@ -24,5 +24,9 @@ class CreditsItemCollectionViewCell: UICollectionViewCell {
         nameLabel.text = viewModel?.name
         profileImage.imageView.kf.setImage(with: viewModel?.profilePath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
         jobLabel.text = viewModel?.job
+
+        if viewModel?.job == nil {
+            jobLabel.isEnabled = false
+        }
     }
 }

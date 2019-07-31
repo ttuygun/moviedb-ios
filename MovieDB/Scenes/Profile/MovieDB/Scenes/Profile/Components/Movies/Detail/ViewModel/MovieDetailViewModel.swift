@@ -58,13 +58,11 @@ final class MovieDetailViewModel: ViewModelType {
                 .trackActivity(activityIndicator)
                 .asDriverOnErrorJustComplete()
                 .map {
-                    $0.crew.map {
+                    $0.cast.map {
                         CreditsItemViewModel(with: $0)
                     }
-//                    $0.crew.map {
-//                        CreditsItemViewModel(with: $0)
-//                    }
                 }
+            
         }
 
         let dismiss = Driver.of(input.backButtonTrigger)
