@@ -10,7 +10,7 @@ import Foundation
 
 public struct Movie: Decodable {
     let voteCount: Int?
-    public let id: Int?
+    public let id: Int
     let video: Bool?
     let voteAverage: Double?
     public let title: String?

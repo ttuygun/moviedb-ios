@@ -13,11 +13,11 @@ public struct MovieDetail: Decodable {
     public let backdropPath: String?
     let belongsToCollection: BelongsToCollection?
     let budget: Int?
-    let genres: [Genre]
+    public let genres: [Genre]?
     let homepage: String?
     let id: Int?
     public let imdbID, originalLanguage, originalTitle, overview: String?
-    let popularity: Double?
+    public let popularity: Double?
     public let posterPath: String?
     let productionCompanies: [ProductionCompany]?
     let productionCountries: [ProductionCountry]?
@@ -64,9 +64,9 @@ struct BelongsToCollection: Decodable {
 }
 
 // MARK: - Genre
-struct Genre: Decodable {
+public struct Genre: Decodable {
     let id: Int?
-    let name: String?
+    public let name: String?
 }
 
 // MARK: - ProductionCompany

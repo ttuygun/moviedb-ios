@@ -11,8 +11,19 @@ import Domain
 
 final class TVShowDetailItemViewModel {
     let tvShowDetail: TVShowDetail
+    var genres: String = ""
+    var popularity: String = ""
 
     init(with tvShowDetail: TVShowDetail) {
         self.tvShowDetail = tvShowDetail
+        if let genres = tvShowDetail.genres {
+            let genresString = genres.map {
+                "\($0.name ?? "")"
+            }
+            self.genres = genresString.joined(separator: " , ")
+        }
+        if let popularity = tvShowDetail.popularity {
+            self.popularity = "\(popularity) People watching"
+        }
     }
 }

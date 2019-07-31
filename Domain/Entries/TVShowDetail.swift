@@ -13,7 +13,7 @@ public struct TVShowDetail: Decodable {
     let createdBy: [CreatedBy]?
     let episodeRunTime: [Int]?
     let firstAirDate: String?
-    let genres: [Genre]?
+    public let genres: [Genre]?
     let homepage: String?
     public let id: Int?
     let inProduction: Bool?
@@ -27,7 +27,7 @@ public struct TVShowDetail: Decodable {
     let originCountry: [String]?
     let originalLanguage, originalName: String?
     public let overview: String?
-    let popularity: Double?
+    public let popularity: Double?
     public let posterPath: String?
     let productionCompanies: [Network]?
     let seasons: [Season]?

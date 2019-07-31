@@ -129,6 +129,8 @@ class DetailViewController: UIViewController {
             vc.backdropImage.kf.setImage(with: viewModel.movieDetail.backdropPath?.createFullImageURL(), placeholder: UIImage(named: "backdropImage"))
             vc.posterImage.imageView.kf.setImage(with: viewModel.movieDetail.posterPath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
             vc.overviewLabel.text = viewModel.movieDetail.overview
+            vc.genresLabel.text = viewModel.genres
+            vc.popularityLabel.text = viewModel.popularity
         })
     }
 
@@ -139,6 +141,8 @@ class DetailViewController: UIViewController {
             vc.backdropImage.kf.setImage(with: viewModel.tvShowDetail.backdropPath?.createFullImageURL(), placeholder: UIImage(named: "backdropImage"))
             vc.posterImage.imageView.kf.setImage(with: viewModel.tvShowDetail.posterPath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
             vc.overviewLabel.text = viewModel.tvShowDetail.overview
+            vc.genresLabel.text = viewModel.genres
+            vc.popularityLabel.text = viewModel.popularity
         })
     }
 

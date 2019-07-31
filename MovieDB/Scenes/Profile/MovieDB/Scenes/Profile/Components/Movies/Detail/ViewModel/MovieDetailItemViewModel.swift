@@ -11,9 +11,21 @@ import Domain
 
 final class MovieDetailItemViewModel {
     let movieDetail: MovieDetail
+    var genres: String = ""
+    var popularity: String = ""
 
     init(with movieDetail: MovieDetail) {
         self.movieDetail = movieDetail
+        if let genres = movieDetail.genres {
+            let genresString = genres.map {
+                 "\($0.name ?? "")"
+            }
+            self.genres = genresString.joined(separator: " , ")
+        }
+        if let popularity = movieDetail.popularity {
+            self.popularity = "\(popularity) People watching"
+        }
+
     }
 }
 

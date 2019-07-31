@@ -43,7 +43,7 @@ final class MovieDetailViewModel: ViewModelType {
         let errors = errorTracker.asDriver()
 
         let movieDetail = input.trigger.flatMapLatest {
-            self.useCase.detail(id: self.movie.id ?? 0)
+            self.useCase.detail(id: self.movie.id)
                 .trackActivity(activityIndicator)
                 .asDriverOnErrorJustComplete()
                 .map {
@@ -52,7 +52,7 @@ final class MovieDetailViewModel: ViewModelType {
         }
 
         let credits = input.trigger.flatMapLatest {
-            self.useCase.credits(id: self.movie.id ?? 0)
+            self.useCase.credits(id: self.movie.id)
                 .trackActivity(activityIndicator)
                 .asDriverOnErrorJustComplete()
                 .map {
