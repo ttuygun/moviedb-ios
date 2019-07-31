@@ -24,8 +24,8 @@ final class Application {
 
         let moviesNavigationController = UINavigationController()
         moviesNavigationController.tabBarItem = UITabBarItem(title: "Movies",
-                                                         image: UIImage(named: "iconMovies"),
-                                                         selectedImage: UIImage(named: "iconMoviesSelected"))
+                                                         image: UIImage(named: "moviesIcon"),
+                                                         selectedImage: UIImage(named: "moviesIconSelected"))
 
         let moviesNavigator = DefaultMoviesNavigator(services: networkUseCaseProvider,
                                                   navigationController: moviesNavigationController,
@@ -33,8 +33,8 @@ final class Application {
 
         let tvShowsNavigationController = UINavigationController()
         tvShowsNavigationController.tabBarItem = UITabBarItem(title: "TV",
-                                                             image: UIImage(named: "iconTV"),
-                                                             selectedImage: UIImage(named: "iconTVSelected"))
+                                                             image: UIImage(named: "tvIcon"),
+                                                             selectedImage: UIImage(named: "tvIconSelected"))
 
         let tvShowsNavigator = DefaultTVShowsNavigator(services: networkUseCaseProvider,
                                                        navigationController: tvShowsNavigationController,
@@ -42,10 +42,17 @@ final class Application {
 
         let profileNavigationController = UINavigationController()
         profileNavigationController.tabBarItem = UITabBarItem(title: "Profile",
-                                                             image: UIImage(named: "iconProfile"),
-                                                             selectedImage: UIImage(named: "iconProfileSelected"))
+                                                             image: UIImage(named: "profileIcon"),
+                                                             selectedImage: UIImage(named: "profileIconSelected"))
 
+        
         let tabBarController = UITabBarController()
+
+        UITabBar.appearance().tintColor = UIColor(hue:0.98, saturation:0.89, brightness:0.84, alpha:1.00)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+
+
         tabBarController.viewControllers = [
             moviesNavigationController,
             tvShowsNavigationController,
