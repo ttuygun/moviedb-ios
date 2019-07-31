@@ -19,6 +19,11 @@
 		D5194CE922ECFD55001FB3EF /* NowPlayingMoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5194CE822ECFD55001FB3EF /* NowPlayingMoviesTableViewCell.swift */; };
 		D5194CEB22ECFD72001FB3EF /* PopularMoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5194CEA22ECFD72001FB3EF /* PopularMoviesTableViewCell.swift */; };
 		D5194CED22ED04B1001FB3EF /* TopRatedMoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5194CEC22ED04B1001FB3EF /* TopRatedMoviesTableViewCell.swift */; };
+		D524F03222F17D8E00FA257D /* SwiftShadowImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D524F03122F17D8E00FA257D /* SwiftShadowImageView.swift */; };
+		D524F03622F19BA800FA257D /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D524F03522F19BA800FA257D /* SF-Pro-Display-Bold.otf */; };
+		D524F03822F1A00C00FA257D /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D524F03722F1A00C00FA257D /* SF-Pro-Display-Regular.otf */; };
+		D524F03A22F1A02E00FA257D /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D524F03922F1A02E00FA257D /* SF-Pro-Display-Semibold.otf */; };
+		D524F03C22F1A30D00FA257D /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D524F03B22F1A30D00FA257D /* SF-Pro-Display-Medium.otf */; };
 		D59091E522EDCF9D00DB907B /* PosterItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59091E422EDCF9D00DB907B /* PosterItemCollectionViewCell.xib */; };
 		D59091E822EDE94C00DB907B /* RxKingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59091E622EDE94C00DB907B /* RxKingfisher.framework */; };
 		D59091E922EDE94C00DB907B /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59091E722EDE94C00DB907B /* Kingfisher.framework */; };
@@ -149,6 +154,12 @@
 		D5194CE822ECFD55001FB3EF /* NowPlayingMoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingMoviesTableViewCell.swift; sourceTree = "<group>"; };
 		D5194CEA22ECFD72001FB3EF /* PopularMoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesTableViewCell.swift; sourceTree = "<group>"; };
 		D5194CEC22ED04B1001FB3EF /* TopRatedMoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMoviesTableViewCell.swift; sourceTree = "<group>"; };
+		D524F02F22F179D800FA257D /* ShadowView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShadowView.framework; path = Carthage/Build/iOS/ShadowView.framework; sourceTree = "<group>"; };
+		D524F03122F17D8E00FA257D /* SwiftShadowImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftShadowImageView.swift; sourceTree = "<group>"; };
+		D524F03522F19BA800FA257D /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		D524F03722F1A00C00FA257D /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		D524F03922F1A02E00FA257D /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		D524F03B22F1A30D00FA257D /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		D59091E422EDCF9D00DB907B /* PosterItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PosterItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		D59091E622EDE94C00DB907B /* RxKingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxKingfisher.framework; path = Carthage/Build/iOS/RxKingfisher.framework; sourceTree = "<group>"; };
 		D59091E722EDE94C00DB907B /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -270,6 +281,7 @@
 				D5194CD022ECED65001FB3EF /* Observable+Ext.swift */,
 				D5194CD222ECED6F001FB3EF /* Reusable.swift */,
 				D59091EA22EDEAD500DB907B /* StringExtensions.swift */,
+				D524F03122F17D8E00FA257D /* SwiftShadowImageView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -404,6 +416,25 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		D524F03322F19B9800FA257D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D524F03422F19B9D00FA257D /* Font */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D524F03422F19B9D00FA257D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				D524F03B22F1A30D00FA257D /* SF-Pro-Display-Medium.otf */,
+				D524F03922F1A02E00FA257D /* SF-Pro-Display-Semibold.otf */,
+				D524F03722F1A00C00FA257D /* SF-Pro-Display-Regular.otf */,
+				D524F03522F19BA800FA257D /* SF-Pro-Display-Bold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		D593BDB622EE3D0F003F8EC7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,6 +493,7 @@
 		D5D954A822EC68A700D1C00C /* MovieDB */ = {
 			isa = PBXGroup;
 			children = (
+				D524F03322F19B9800FA257D /* Resource */,
 				D5194CD422ECEDF2001FB3EF /* Scenes */,
 				D5194CCB22ECED3B001FB3EF /* Utility */,
 				D5194CC822ECED12001FB3EF /* Common */,
@@ -478,6 +510,7 @@
 		D5D954BB22EC7F6400D1C00C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D524F02F22F179D800FA257D /* ShadowView.framework */,
 				D59091E722EDE94C00DB907B /* Kingfisher.framework */,
 				D59091E622EDE94C00DB907B /* RxKingfisher.framework */,
 				D5D954BD22EC7F6400D1C00C /* Alamofire.framework */,
@@ -797,8 +830,12 @@
 			files = (
 				D5E33EA422EF217E0027B85E /* CreditsItemCollectionViewCell.xib in Resources */,
 				D5D954B422EC68A800D1C00C /* LaunchScreen.storyboard in Resources */,
+				D524F03822F1A00C00FA257D /* SF-Pro-Display-Regular.otf in Resources */,
 				D5D954B122EC68A800D1C00C /* Assets.xcassets in Resources */,
+				D524F03C22F1A30D00FA257D /* SF-Pro-Display-Medium.otf in Resources */,
 				D59091E522EDCF9D00DB907B /* PosterItemCollectionViewCell.xib in Resources */,
+				D524F03622F19BA800FA257D /* SF-Pro-Display-Bold.otf in Resources */,
+				D524F03A22F1A02E00FA257D /* SF-Pro-Display-Semibold.otf in Resources */,
 				D5E33EAA22F097830027B85E /* MovieBackDropItemCollectionViewCell.xib in Resources */,
 				D5D954AF22EC68A700D1C00C /* Main.storyboard in Resources */,
 			);
@@ -855,6 +892,7 @@
 				D5D954AA22EC68A700D1C00C /* AppDelegate.swift in Sources */,
 				D5E33EBD22F0E3E80027B85E /* TVShowDetailViewController.swift in Sources */,
 				D5194CDF22ECEFA7001FB3EF /* MoviesViewModel.swift in Sources */,
+				D524F03222F17D8E00FA257D /* SwiftShadowImageView.swift in Sources */,
 				D5E33EC322F0E7C30027B85E /* DetailViewController.swift in Sources */,
 				D59091EB22EDEAD500DB907B /* StringExtensions.swift in Sources */,
 			);

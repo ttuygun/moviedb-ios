@@ -13,7 +13,7 @@ class CreditsItemCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var jobLabel: UILabel!
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileImage: SwiftShadowImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +22,7 @@ class CreditsItemCollectionViewCell: UICollectionViewCell {
 
     func bind(_ viewModel: CreditsItemViewModel?) {
         nameLabel.text = viewModel?.name
-        profileImage.kf.setImage(with: viewModel?.profilePath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
+        profileImage.imageView.kf.setImage(with: viewModel?.profilePath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
         jobLabel.text = viewModel?.job
     }
 }

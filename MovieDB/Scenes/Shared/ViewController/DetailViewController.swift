@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
 
     @IBOutlet weak var backdropImage: UIImageView!
-    @IBOutlet weak var posterImage: UIImageView!
+    @IBOutlet weak var posterImage: SwiftShadowImageView!
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var popularityLabel: UILabel!
@@ -124,20 +124,20 @@ class DetailViewController: UIViewController {
 
     var movieDetailBinding: Binder<MovieDetailItemViewModel> {
         return Binder(self, binding: { (vc, viewModel) in
-            vc.titleLabel.text = viewModel.movieDetail.title
+            vc.titleLabel.text = viewModel.movieDetail.title?.uppercased()
             vc.voteLabel.text = viewModel.movieDetail.voteAverage?.description
             vc.backdropImage.kf.setImage(with: viewModel.movieDetail.backdropPath?.createFullImageURL(), placeholder: UIImage(named: "backdropImage"))
-            vc.posterImage.kf.setImage(with: viewModel.movieDetail.posterPath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
+            vc.posterImage.imageView.kf.setImage(with: viewModel.movieDetail.posterPath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
             vc.overviewLabel.text = viewModel.movieDetail.overview
         })
     }
 
     var tvShowDetailBinding: Binder<TVShowDetailItemViewModel> {
         return Binder(self, binding: { (vc, viewModel) in
-            vc.titleLabel.text = viewModel.tvShowDetail.name
+            vc.titleLabel.text = viewModel.tvShowDetail.name?.uppercased()
             vc.voteLabel.text = viewModel.tvShowDetail.voteAverage?.description
             vc.backdropImage.kf.setImage(with: viewModel.tvShowDetail.backdropPath?.createFullImageURL(), placeholder: UIImage(named: "backdropImage"))
-            vc.posterImage.kf.setImage(with: viewModel.tvShowDetail.posterPath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
+            vc.posterImage.imageView.kf.setImage(with: viewModel.tvShowDetail.posterPath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
             vc.overviewLabel.text = viewModel.tvShowDetail.overview
         })
     }

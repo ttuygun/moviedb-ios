@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PopularTVShowsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var backdropImage: UIImageView!
+    @IBOutlet weak var backdropImage: SwiftShadowImageView!
     @IBOutlet weak var voteLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,7 +27,7 @@ class PopularTVShowsTableViewCell: UITableViewCell {
     }
 
     func bind(_ viewModel: TVShowItemViewModel) {
-        backdropImage.kf.setImage(with: viewModel.backdropPathURL)
+        backdropImage.imageView.kf.setImage(with: viewModel.backdropPathURL)
         voteLabel.text = viewModel.voteAverage
     }
 

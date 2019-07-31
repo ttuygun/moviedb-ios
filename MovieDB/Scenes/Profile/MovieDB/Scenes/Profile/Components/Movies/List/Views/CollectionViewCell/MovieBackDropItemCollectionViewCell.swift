@@ -11,7 +11,7 @@ import Kingfisher
 
 class MovieBackDropItemCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var backdropImage: UIImageView!
+    @IBOutlet weak var backdropImage: SwiftShadowImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +19,7 @@ class MovieBackDropItemCollectionViewCell: UICollectionViewCell {
     }
 
     func bind(_ viewModel: MovieItemViewModel) {
-        backdropImage.kf.setImage(with: viewModel.backdropPathURL)
+        backdropImage.imageView.kf.setImage(with: viewModel.backdropPathURL)
     }
 
 }
