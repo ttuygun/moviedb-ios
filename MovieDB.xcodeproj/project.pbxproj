@@ -329,7 +329,7 @@
 		D5194CD822ECEE3E001FB3EF /* List */ = {
 			isa = PBXGroup;
 			children = (
-				D5194CF122ED0C8D001FB3EF /* Views */,
+				D5194CF122ED0C8D001FB3EF /* View */,
 				D5194CF022ED0C83001FB3EF /* Navigator */,
 				D5194CEF22ED0C7C001FB3EF /* ViewModel */,
 				D5194CEE22ED0C71001FB3EF /* ViewController */,
@@ -340,7 +340,6 @@
 		D5194CD922ECEE43001FB3EF /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				D593BDB922EE3D27003F8EC7 /* View */,
 				D593BDB822EE3D1D003F8EC7 /* Navigator */,
 				D593BDB722EE3D17003F8EC7 /* ViewModel */,
 				D593BDB622EE3D0F003F8EC7 /* ViewController */,
@@ -394,13 +393,13 @@
 			path = Navigator;
 			sourceTree = "<group>";
 		};
-		D5194CF122ED0C8D001FB3EF /* Views */ = {
+		D5194CF122ED0C8D001FB3EF /* View */ = {
 			isa = PBXGroup;
 			children = (
 				D5194CF622ED0D6D001FB3EF /* TableViewCell */,
 				D5194CF722ED0D8F001FB3EF /* CollectionViewCell */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		D5194CF622ED0D6D001FB3EF /* TableViewCell */ = {
@@ -439,6 +438,25 @@
 				D524F03522F19BA800FA257D /* SF-Pro-Display-Bold.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		D552F99E22F2287200CA77F5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D552F99F22F2288900CA77F5 /* CollectionView */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D552F99F22F2288900CA77F5 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D5E33EA122EF217E0027B85E /* CreditsItemCollectionViewCell.swift */,
+				D5E33EA222EF217E0027B85E /* CreditsItemCollectionViewCell.xib */,
+				D59091E422EDCF9D00DB907B /* PosterItemCollectionViewCell.xib */,
+				D5C0014622EDB486009112EF /* PosterItemCollectionViewCell.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		D57EA5AA22F1BE9F007EC70D /* ViewController */ = {
@@ -480,15 +498,6 @@
 				D593BDC222EE3E34003F8EC7 /* MovieDetailNavigator.swift */,
 			);
 			path = Navigator;
-			sourceTree = "<group>";
-		};
-		D593BDB922EE3D27003F8EC7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D5E33EA122EF217E0027B85E /* CreditsItemCollectionViewCell.swift */,
-				D5E33EA222EF217E0027B85E /* CreditsItemCollectionViewCell.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D5D9549D22EC68A700D1C00C = {
@@ -660,8 +669,7 @@
 		D5E33ED422F0F7D60027B85E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D59091E422EDCF9D00DB907B /* PosterItemCollectionViewCell.xib */,
-				D5C0014622EDB486009112EF /* PosterItemCollectionViewCell.swift */,
+				D552F99E22F2287200CA77F5 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
