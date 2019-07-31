@@ -12,6 +12,7 @@ import Domain
 final class MovieDetailItemViewModel {
     let title: String
     let overview: String
+    let homepage: String
     let movieDetail: MovieDetail
     var genres: String = ""
     var popularity: String = ""
@@ -29,6 +30,7 @@ final class MovieDetailItemViewModel {
         }
         self.title = movieDetail.title ?? ""
         self.overview = movieDetail.overview ?? ""
+        self.homepage = movieDetail.homepage ?? ""
     }
 }
 

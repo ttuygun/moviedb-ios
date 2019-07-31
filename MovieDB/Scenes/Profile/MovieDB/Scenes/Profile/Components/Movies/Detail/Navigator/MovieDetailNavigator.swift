@@ -27,7 +27,7 @@ final class DefaultMovieDetailNavigator: MovieDetailNavigator {
 
     func shareMovieAction(_ movie: MovieDetailItemViewModel) {
         let vc = UIActivityViewController(activityItems: [movie.title,
-                                                          movie.overview],
+                                                          movie.homepage],
                                           applicationActivities: nil)
         navigationController.present(vc, animated: true)
     }

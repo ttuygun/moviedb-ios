@@ -302,8 +302,8 @@
 		D5194CD522ECEE1C001FB3EF /* Movies */ = {
 			isa = PBXGroup;
 			children = (
-				D5194CD922ECEE43001FB3EF /* Detail */,
 				D5194CD822ECEE3E001FB3EF /* List */,
+				D5194CD922ECEE43001FB3EF /* Detail */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -311,8 +311,8 @@
 		D5194CD622ECEE27001FB3EF /* TVShows */ = {
 			isa = PBXGroup;
 			children = (
-				D5194CDB22ECEE4C001FB3EF /* Detail */,
 				D5194CDA22ECEE48001FB3EF /* List */,
+				D5194CDB22ECEE4C001FB3EF /* Detail */,
 			);
 			path = TVShows;
 			sourceTree = "<group>";
@@ -362,9 +362,9 @@
 		D5194CDB22ECEE4C001FB3EF /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				D5E33ED722F0F8240027B85E /* Navigator */,
 				D5E33ED522F0F8100027B85E /* ViewModel */,
 				D5E33ED622F0F81A0027B85E /* ViewController */,
-				D5E33ED722F0F8240027B85E /* Navigator */,
 			);
 			path = Detail;
 			sourceTree = "<group>";

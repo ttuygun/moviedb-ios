@@ -27,7 +27,7 @@ final class DefaultTVShowDetailNavigator: TVShowDetailNavigator {
 
     func shareTVShowAction(_ tvShowDetail: TVShowDetailItemViewModel) {
         let vc = UIActivityViewController(activityItems: [tvShowDetail.title,
-                                                          tvShowDetail.overview],
+                                                          tvShowDetail.homePage],
                                           applicationActivities: nil)
         navigationController.present(vc, animated: true)
     }

@@ -14,7 +14,7 @@ public struct MovieDetail: Decodable {
     let belongsToCollection: BelongsToCollection?
     let budget: Int?
     public let genres: [Genre]?
-    let homepage: String?
+    public let homepage: String?
     let id: Int?
     public let imdbID, originalLanguage, originalTitle, overview: String?
     public let popularity: Double?
