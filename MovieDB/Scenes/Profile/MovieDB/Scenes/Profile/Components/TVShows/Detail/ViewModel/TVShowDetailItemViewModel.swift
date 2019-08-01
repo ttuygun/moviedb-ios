@@ -16,6 +16,7 @@ final class TVShowDetailItemViewModel {
     let tvShowDetail: TVShowDetail
     var genres: String = ""
     var popularity: String = ""
+    let vote: String
 
     init(with tvShowDetail: TVShowDetail) {
         self.tvShowDetail = tvShowDetail
@@ -28,8 +29,9 @@ final class TVShowDetailItemViewModel {
         if let popularity = tvShowDetail.popularity {
             self.popularity = "\(popularity) People watching"
         }
-        self.title = tvShowDetail.name ?? ""
+        self.title = tvShowDetail.name?.uppercased() ?? ""
         self.overview = tvShowDetail.overview ?? ""
         self.homePage = tvShowDetail.homepage ?? ""
+        self.vote = tvShowDetail.voteAverage?.description ?? ""
     }
 }

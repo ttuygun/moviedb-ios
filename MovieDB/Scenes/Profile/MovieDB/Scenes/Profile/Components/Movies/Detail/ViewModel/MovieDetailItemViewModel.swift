@@ -16,6 +16,7 @@ final class MovieDetailItemViewModel {
     let movieDetail: MovieDetail
     var genres: String = ""
     var popularity: String = ""
+    let vote: String
 
     init(with movieDetail: MovieDetail) {
         self.movieDetail = movieDetail
@@ -28,9 +29,10 @@ final class MovieDetailItemViewModel {
         if let popularity = movieDetail.popularity {
             self.popularity = "\(popularity) People watching"
         }
-        self.title = movieDetail.title ?? ""
+        self.title = movieDetail.title?.uppercased() ?? ""
         self.overview = movieDetail.overview ?? ""
         self.homepage = movieDetail.homepage ?? ""
+        self.vote = movieDetail.voteAverage?.description ?? ""
     }
 }
 
