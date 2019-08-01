@@ -67,7 +67,7 @@ extension MDApi: TargetType, PluginType {
     }
 
     var task: Moya.Task {
-        return .requestParameters(parameters: ["api_key": ""], encoding: URLEncoding.queryString)
+        return .requestParameters(parameters: ["api_key": "INSERT_API_KEY_HERE"], encoding: URLEncoding.queryString)
     }
 
     var headers: [String : String]? {

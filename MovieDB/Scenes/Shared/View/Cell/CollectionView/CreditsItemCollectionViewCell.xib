@@ -20,23 +20,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CreditsItemCollectionViewCell" id="gTV-IL-0wX" customClass="CreditsItemCollectionViewCell" customModule="MovieDB" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="102" height="147"/>
+            <rect key="frame" x="0.0" y="0.0" width="102" height="160"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="102" height="147"/>
+                <rect key="frame" x="0.0" y="0.0" width="102" height="160"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfI-zp-m00">
-                        <rect key="frame" x="0.0" y="112" width="102" height="14.5"/>
+                        <rect key="frame" x="0.0" y="122" width="102" height="14.5"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-DO-1MK" customClass="SwiftShadowImageView" customModule="MovieDB" customModuleProvider="target">
-                        <rect key="frame" x="10" y="5" width="80" height="100"/>
+                        <rect key="frame" x="10" y="5" width="80" height="110"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="100" id="0Vd-IF-R1k"/>
+                            <constraint firstAttribute="height" constant="110" id="0Vd-IF-R1k"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="imageShadowOpacity">
@@ -61,7 +61,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvw-PL-qh2">
-                        <rect key="frame" x="0.0" y="131.5" width="102" height="14.5"/>
+                        <rect key="frame" x="0.0" y="141.5" width="102" height="14.5"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -80,7 +80,7 @@
                 <constraint firstAttribute="trailing" secondItem="dfI-zp-m00" secondAttribute="trailing" id="xkq-Gi-cMf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="102" height="147"/>
+            <size key="customSize" width="102" height="157"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="imageShadowOpacity">
                     <real key="value" value="0.69999999999999996"/>
@@ -106,7 +106,7 @@
                 <outlet property="nameLabel" destination="dfI-zp-m00" id="41S-fw-OK9"/>
                 <outlet property="profileImage" destination="0pm-DO-1MK" id="phn-gY-rdA"/>
             </connections>
-            <point key="canvasLocation" x="-172.46376811594203" y="108.81696428571428"/>
+            <point key="canvasLocation" x="-172.46376811594203" y="112.16517857142857"/>
         </collectionViewCell>
     </objects>
     <resources>
