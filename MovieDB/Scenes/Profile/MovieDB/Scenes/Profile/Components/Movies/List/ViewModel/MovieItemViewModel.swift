@@ -16,6 +16,7 @@ final class MovieItemViewModel {
     let releaseDate: String?
     var posterPathURL: URL?
     var backdropPathURL: URL?
+    let vote: String
 
     init(with movie: Movie) {
         self.movie = movie
@@ -27,5 +28,6 @@ final class MovieItemViewModel {
         if let backdropPath = movie.backdropPath, let url = URL(string: backdropPath.transformPosterURL()) {
             backdropPathURL = url
         }
+        vote = movie.voteAverage?.description.description ?? ""
     }
 }

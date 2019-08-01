@@ -66,14 +66,14 @@ class MoviesViewController: UIViewController {
             nowPlayingMoviesCollectionView
                 .rx.items(cellIdentifier: PosterItemCollectionViewCell.reuseID,
                           cellType: PosterItemCollectionViewCell.self)) {_, viewModel, cell in
-                            cell.bindMovie(viewModel)
+                            cell.bindMovie(viewModel, showVote: false)
             }.disposed(by: disposeBag)
 
         output.popularMovies.drive(
             popularMoviesCollectionView
                 .rx.items(cellIdentifier: PosterItemCollectionViewCell.reuseID,
                           cellType: PosterItemCollectionViewCell.self)) {_, viewModel, cell in
-                            cell.bindMovie(viewModel)
+                            cell.bindMovie(viewModel, showVote: true)
             }.disposed(by: disposeBag)
 
         output.selectedTopRated

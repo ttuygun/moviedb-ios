@@ -12,7 +12,7 @@ public struct Movie: Decodable {
     let voteCount: Int?
     public let id: Int
     let video: Bool?
-    let voteAverage: Double?
+    public let voteAverage: Double?
     public let title: String?
     let popularity: Double?
     public let posterPath: String?
