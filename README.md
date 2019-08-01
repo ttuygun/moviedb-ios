@@ -1,6 +1,6 @@
 # moviedb-ios project
 
-###Installing dependencies
+### Installing dependencies
 
 Make sure you installed [Carthage](https://github.com/Carthage/Carthage/) on your system and run this command to install all required packages.
 
