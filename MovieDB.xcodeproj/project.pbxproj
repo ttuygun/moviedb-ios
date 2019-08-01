@@ -363,10 +363,10 @@
 		D5194CDA22ECEE48001FB3EF /* List */ = {
 			isa = PBXGroup;
 			children = (
-				D5E33ED822F0F82F0027B85E /* ViewController */,
-				D5E33ED922F0F8390027B85E /* ViewModel */,
-				D5E33EDA22F0F8450027B85E /* Navigator */,
 				D5E33EDB22F0F84F0027B85E /* View */,
+				D5E33EDA22F0F8450027B85E /* Navigator */,
+				D5E33ED922F0F8390027B85E /* ViewModel */,
+				D5E33ED822F0F82F0027B85E /* ViewController */,
 			);
 			path = List;
 			sourceTree = "<group>";
