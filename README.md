@@ -14,7 +14,7 @@ You must get a **API Key (v3 Auth)** from https://developers.themoviedb.org/ and
 
 ### Architecture
 
-In this project, I used **MVVM-C** (Model–view–viewmodel and **clean architecture**) with **RxSwift* proposed by sergdort. I implement NetworkPlatform with Moya (network abstraction layer)
+In this project, I used **MVVM-C** (Model–view–viewmodel and **clean architecture**) with **RxSwift** proposed by sergdort. I implement NetworkPlatform with Moya (network abstraction layer)
 
 ### Libraries
 
