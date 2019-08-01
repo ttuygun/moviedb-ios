@@ -63,7 +63,8 @@ class DetailViewController: UIViewController {
         let input = MovieDetailViewModel
             .Input(trigger: Driver.merge(viewWillAppear),
                    backButtonTrigger: backButton.rx.tap.asDriver(),
-                   shareButtonTrigger: shareButton.rx.tap.asDriver())
+                   shareButtonTrigger: shareButton.rx.tap.asDriver(),
+                   playButtonTrigger: playButton.rx.tap.asDriver())
 
         let output = viewModelMovie.transform(input: input)
 
@@ -86,6 +87,9 @@ class DetailViewController: UIViewController {
         output.shareAction.drive()
             .disposed(by: disposeBag)
 
+        output.playAction.drive()
+            .disposed(by: disposeBag)
+
         output.credits.drive()
             .disposed(by: disposeBag)
 
@@ -102,7 +106,8 @@ class DetailViewController: UIViewController {
         let input = TVShowDetailViewModel
             .Input(trigger: Driver.merge(viewWillAppear),
                    backButtonTrigger: backButton.rx.tap.asDriver(),
-                   shareButtonTrigger: shareButton.rx.tap.asDriver())
+                   shareButtonTrigger: shareButton.rx.tap.asDriver(),
+                   playButtonTrigger: playButton.rx.tap.asDriver())
 
         let output = viewModelTVShow.transform(input: input)
 
@@ -123,6 +128,9 @@ class DetailViewController: UIViewController {
             .disposed(by: disposeBag)
 
         output.shareAction.drive()
+            .disposed(by: disposeBag)
+
+        output.playAction.drive()
             .disposed(by: disposeBag)
 
         output.credits.drive()

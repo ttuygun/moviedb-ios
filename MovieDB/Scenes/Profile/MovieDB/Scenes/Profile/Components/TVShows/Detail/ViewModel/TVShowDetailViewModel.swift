@@ -16,6 +16,7 @@ final class TVShowDetailViewModel: ViewModelType {
         let trigger: Driver<Void>
         let backButtonTrigger: Driver<Void>
         let shareButtonTrigger: Driver<Void>
+        let playButtonTrigger: Driver<Void>
     }
 
     struct Output {
@@ -24,6 +25,7 @@ final class TVShowDetailViewModel: ViewModelType {
         let credits: Driver<[CreditsItemViewModel]>
         let dismiss: Driver<Void>
         let shareAction: Driver<TVShowDetailItemViewModel>
+        let playAction: Driver<VideoItemViewModel>
         let error: Driver<Error>
     }
 
@@ -45,7 +47,7 @@ final class TVShowDetailViewModel: ViewModelType {
         let errors = errorTracker.asDriver()
 
         let tvShowDetail = input.trigger.flatMapLatest {
-            self.useCase.detail(id: self.tvShow.id ?? 0)
+            self.useCase.detail(id: self.tvShow.id)
                 .trackActivity(activityIndicator)
                 .asDriverOnErrorJustComplete()
                 .map {
@@ -54,7 +56,7 @@ final class TVShowDetailViewModel: ViewModelType {
         }
 
         let credits = input.trigger.flatMapLatest {
-            self.useCase.credits(id: self.tvShow.id ?? 0)
+            self.useCase.credits(id: self.tvShow.id)
                 .trackActivity(activityIndicator)
                 .asDriverOnErrorJustComplete()
                 .map {
@@ -67,6 +69,15 @@ final class TVShowDetailViewModel: ViewModelType {
             }
         }
 
+        let videos = input.trigger.flatMapLatest {
+            self.useCase.videos(id: self.tvShow.id)
+                .trackActivity(activityIndicator)
+                .asDriverOnErrorJustComplete()
+                .map {
+                    VideoItemViewModel(with: $0)
+            }
+        }
+
         let dismiss = Driver.of(input.backButtonTrigger)
             .merge()
             .do(onNext: navigator.toTVShows)
@@ -76,11 +87,17 @@ final class TVShowDetailViewModel: ViewModelType {
             .withLatestFrom(tvShowDetail)
             .do(onNext: navigator.shareTVShowAction)
 
+        let playAction = Driver.of(input.playButtonTrigger)
+            .merge()
+            .withLatestFrom(videos)
+            .do(onNext: navigator.playVideoAction)
+
         return Output(fetching: fetching,
                       tvShowDetail: tvShowDetail,
                       credits: credits,
                       dismiss: dismiss,
                       shareAction: shareAction,
+                      playAction: playAction,
                       error: errors)
     }
 }

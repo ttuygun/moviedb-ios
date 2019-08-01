@@ -15,4 +15,5 @@ public protocol MoviesUseCase {
     func popular() -> Observable<[Movie]>
     func detail(id: Int) -> Observable<MovieDetail>
     func credits(id: Int) -> Observable<Credits>
+    func videos(id: Int) -> Observable<[Video]>
 }

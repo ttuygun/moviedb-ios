@@ -16,6 +16,7 @@ final class MovieDetailViewModel: ViewModelType {
         let trigger: Driver<Void>
         let backButtonTrigger: Driver<Void>
         let shareButtonTrigger: Driver<Void>
+        let playButtonTrigger: Driver<Void>
     }
 
     struct Output {
@@ -24,6 +25,7 @@ final class MovieDetailViewModel: ViewModelType {
         let credits: Driver<[CreditsItemViewModel]>
         let dismiss: Driver<Void>
         let shareAction: Driver<MovieDetailItemViewModel>
+        let playAction: Driver<VideoItemViewModel>
         let error: Driver<Error>
     }
 
@@ -65,6 +67,15 @@ final class MovieDetailViewModel: ViewModelType {
             
         }
 
+        let videos = input.trigger.flatMapLatest {
+            self.useCase.videos(id: self.movie.id)
+                .trackActivity(activityIndicator)
+                .asDriverOnErrorJustComplete()
+                .map {
+                    VideoItemViewModel(with: $0)
+                }
+        }
+
         let dismiss = Driver.of(input.backButtonTrigger)
                 .merge()
                 .do(onNext: navigator.toMovies)
@@ -74,11 +85,17 @@ final class MovieDetailViewModel: ViewModelType {
             .withLatestFrom(movieDetail)
             .do(onNext: navigator.shareMovieAction)
 
+        let playAction = Driver.of(input.playButtonTrigger)
+            .merge()
+            .withLatestFrom(videos)
+            .do(onNext: navigator.playVideoAction)
+
         return Output(fetching: fetching,
                       movieDetail: movieDetail,
                       credits: credits,
                       dismiss: dismiss,
                       shareAction: shareAction,
+                      playAction: playAction,
                       error: errors)
     }
 }

@@ -18,7 +18,7 @@ public struct TVShow: Decodable {
     let firstAirDate: String?
     public let backdropPath: String?
     let originalLanguage: String?
-    public let id: Int?
+    public let id: Int
     public let voteAverage: Double?
     public let overview, posterPath: String?
 

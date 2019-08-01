@@ -14,4 +14,5 @@ public protocol TVShowsUseCase {
     func popular() -> Observable<[TVShow]>
     func detail(id: Int) -> Observable<TVShowDetail>
     func credits(id: Int) -> Observable<Credits>
+    func videos(id: Int) -> Observable<[Video]>
 }

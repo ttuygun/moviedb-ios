@@ -17,6 +17,7 @@ protocol TVShowNetworkProtocol {
     func popular() -> Observable<[TVShow]>
     func detail(id: Int) -> Observable<TVShowDetail>
     func credits(id: Int) -> Observable<Credits>
+    func videos(id: Int) -> Observable<[Video]>
 }
 
 public final class TVShowNetwork: TVShowNetworkProtocol {
@@ -56,6 +57,14 @@ public final class TVShowNetwork: TVShowNetworkProtocol {
             .filterSuccessfulStatusCodes()
             .debug()
             .map(Credits.self)
+            .asObservable()
+    }
+
+    public func videos(id: Int) -> Observable<[Video]> {
+        return provider.rx.request(.tvShowVideos(id: id))
+            .filterSuccessfulStatusCodes()
+            .debug()
+            .map([Video].self, atKeyPath: "results")
             .asObservable()
     }
 }

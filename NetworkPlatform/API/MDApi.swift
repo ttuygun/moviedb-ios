@@ -16,11 +16,13 @@ enum MDApi {
     case moviePopular
     case movieDetail(id: Int)
     case movieCredits(id: Int)
+    case movieVideos(id: Int)
     // TV Show
     case tvShowTopRated
     case tvShowPopular
     case tvShowDetail(id: Int)
     case tvShowCredits(id: Int)
+    case tvShowVideos(id: Int)
 }
 
 extension MDApi: TargetType, PluginType {
@@ -40,6 +42,8 @@ extension MDApi: TargetType, PluginType {
             return "/movie/\(id)"
         case .movieCredits(let id):
             return "/movie/\(id)/credits"
+        case .movieVideos(let id):
+            return "/movie/\(id)/videos"
         case .tvShowTopRated:
             return "/tv/top_rated"
         case .tvShowPopular:
@@ -48,6 +52,8 @@ extension MDApi: TargetType, PluginType {
             return "/tv/\(id)"
         case .tvShowCredits(let id):
             return "/tv/\(id)/credits"
+        case .tvShowVideos(let id):
+            return "/tv/\(id)/videos"
         }
     }
 

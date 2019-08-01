@@ -67,4 +67,12 @@ public final class MovieNetwork: MovieNetworkProtocol {
             .map(Credits.self)
             .asObservable()
     }
+
+    public func videos(id: Int) -> Observable<[Video]> {
+        return provider.rx.request(.movieVideos(id: id))
+            .filterSuccessfulStatusCodes()
+            .debug()
+            .map([Video].self, atKeyPath: "results")
+            .asObservable()
+    }
 }
