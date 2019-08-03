@@ -138,7 +138,7 @@ class DetailViewController: UIViewController {
 
     }
 
-    var movieDetailBinding: Binder<MovieDetailItemViewModel> {
+    private var movieDetailBinding: Binder<MovieDetailItemViewModel> {
         return Binder(self, binding: { (vc, viewModel) in
             vc.titleLabel.text = viewModel.title
             vc.voteLabel.text = viewModel.vote
@@ -150,7 +150,7 @@ class DetailViewController: UIViewController {
         })
     }
 
-    var tvShowDetailBinding: Binder<TVShowDetailItemViewModel> {
+    private var tvShowDetailBinding: Binder<TVShowDetailItemViewModel> {
         return Binder(self, binding: { (vc, viewModel) in
             vc.titleLabel.text = viewModel.title
             vc.voteLabel.text = viewModel.vote
@@ -162,7 +162,7 @@ class DetailViewController: UIViewController {
         })
     }
 
-    var errorBinding: Binder<Error> {
+    private var errorBinding: Binder<Error> {
         return Binder(self, binding: { vc, _ in
             let alert = UIAlertController(title: "Save Error",
                                           message: "Something went wrong",
