@@ -13,18 +13,20 @@ import RxSwift
 final class TVShowItemViewModel {
     let tvShow: TVShow
     let title: String?
-    var posterPathURL: URL?
-    var backdropPathURL: URL?
+    var posterURL: URL?
+    var backdropURL: URL?
     var voteAverage: String?
 
     init(with tvShow: TVShow) {
         self.tvShow = tvShow
         title = tvShow.name?.uppercased()
-        if let posterPath = tvShow.posterPath, let url = URL(string: posterPath.transformPosterURL()) {
-            posterPathURL = url
+        if let posterPath = tvShow.posterPath {
+            let imageURLBuilder = ImageURLBuilder(imageURLType: .original, path: posterPath)
+            self.posterURL = imageURLBuilder.url
         }
-        if let backdropPath = tvShow.backdropPath, let url = URL(string: backdropPath.transformPosterURL()) {
-            backdropPathURL = url
+        if let backdropURL = tvShow.backdropPath {
+            let imageURLBuilder = ImageURLBuilder(imageURLType: .original, path: backdropURL)
+            self.backdropURL = imageURLBuilder.url
         }
         if let voteAverage = tvShow.voteAverage {
             self.voteAverage = String(describing: voteAverage)

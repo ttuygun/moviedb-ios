@@ -14,19 +14,21 @@ final class MovieItemViewModel {
     let movie: Movie
     let title: String?
     let releaseDate: String?
-    var posterPathURL: URL?
-    var backdropPathURL: URL?
+    var posterURL: URL?
+    var backdropURL: URL?
     let vote: String
 
     init(with movie: Movie) {
         self.movie = movie
         title = movie.title?.uppercased()
         releaseDate = movie.releaseDate
-        if let posterPath = movie.posterPath, let url = URL(string: posterPath.transformPosterURL()) {
-            posterPathURL = url
+        if let posterPath = movie.posterPath {
+            let imageURLBuilder = ImageURLBuilder(imageURLType: .original, path: posterPath)
+            self.posterURL = imageURLBuilder.url
         }
-        if let backdropPath = movie.backdropPath, let url = URL(string: backdropPath.transformPosterURL()) {
-            backdropPathURL = url
+        if let backdropURL = movie.backdropPath {
+            let imageURLBuilder = ImageURLBuilder(imageURLType: .original, path: backdropURL)
+            self.backdropURL = imageURLBuilder.url
         }
         vote = movie.voteAverage?.description.description ?? ""
     }

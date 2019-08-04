@@ -17,6 +17,8 @@ final class MovieDetailItemViewModel {
     var genres: String = ""
     var popularity: String = ""
     let vote: String
+    var backdropURL: URL?
+    var posterURL: URL?
 
     init(with movieDetail: MovieDetail) {
         self.movieDetail = movieDetail
@@ -33,6 +35,14 @@ final class MovieDetailItemViewModel {
         self.overview = movieDetail.overview ?? ""
         self.homepage = movieDetail.homepage ?? ""
         self.vote = movieDetail.voteAverage?.description ?? ""
+        if let backdropURL = movieDetail.backdropPath {
+            let imageURLBuilder = ImageURLBuilder(imageURLType: .original, path: backdropURL)
+            self.backdropURL = imageURLBuilder.url
+        }
+        if let posterPath = movieDetail.posterPath {
+            let imageURLBuilder = ImageURLBuilder(imageURLType: .original, path: posterPath)
+            self.posterURL = imageURLBuilder.url
+        }
     }
 }
 

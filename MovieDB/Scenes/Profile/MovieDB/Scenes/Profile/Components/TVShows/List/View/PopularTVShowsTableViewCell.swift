@@ -28,7 +28,7 @@ class PopularTVShowsTableViewCell: UITableViewCell {
     }
 
     func bind(_ viewModel: TVShowItemViewModel) {
-        backdropImage.imageView.kf.setImage(with: viewModel.backdropPathURL)
+        backdropImage.imageView.kf.setImage(with: viewModel.backdropURL)
         voteLabel.text = viewModel.voteAverage
         titleLabel.text = viewModel.title?.uppercased()
     }

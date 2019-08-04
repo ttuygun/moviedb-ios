@@ -17,6 +17,8 @@ final class TVShowDetailItemViewModel {
     var genres: String = ""
     var popularity: String = ""
     let vote: String
+    var backdropURL: URL?
+    var posterURL: URL?
 
     init(with tvShowDetail: TVShowDetail) {
         self.tvShowDetail = tvShowDetail
@@ -33,5 +35,13 @@ final class TVShowDetailItemViewModel {
         self.overview = tvShowDetail.overview ?? ""
         self.homePage = tvShowDetail.homepage ?? ""
         self.vote = tvShowDetail.voteAverage?.description ?? ""
+        if let backdropURL = tvShowDetail.backdropPath {
+            let imageURLBuilder = ImageURLBuilder(imageURLType: .original, path: backdropURL)
+            self.backdropURL = imageURLBuilder.url
+        }
+        if let posterPath = tvShowDetail.posterPath {
+            let imageURLBuilder = ImageURLBuilder(imageURLType: .original, path: posterPath)
+            self.posterURL = imageURLBuilder.url
+        }
     }
 }

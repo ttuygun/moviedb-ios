@@ -142,8 +142,8 @@ class DetailViewController: UIViewController {
         return Binder(self, binding: { (vc, viewModel) in
             vc.titleLabel.text = viewModel.title
             vc.voteLabel.text = viewModel.vote
-            vc.backdropImage.kf.setImage(with: viewModel.movieDetail.backdropPath?.createFullImageURL(), placeholder: UIImage(named: "backdropImage"))
-            vc.posterImage.imageView.kf.setImage(with: viewModel.movieDetail.posterPath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
+            vc.backdropImage.kf.setImage(with: viewModel.backdropURL, placeholder: UIImage(named: "backdropImage"))
+            vc.posterImage.imageView.kf.setImage(with: viewModel.posterURL, placeholder: UIImage(named: "posterImage"))
             vc.overviewLabel.text = viewModel.overview
             vc.genresLabel.text = viewModel.genres
             vc.popularityLabel.text = viewModel.popularity
@@ -154,8 +154,8 @@ class DetailViewController: UIViewController {
         return Binder(self, binding: { (vc, viewModel) in
             vc.titleLabel.text = viewModel.title
             vc.voteLabel.text = viewModel.vote
-            vc.backdropImage.kf.setImage(with: viewModel.tvShowDetail.backdropPath?.createFullImageURL(), placeholder: UIImage(named: "backdropImage"))
-            vc.posterImage.imageView.kf.setImage(with: viewModel.tvShowDetail.posterPath?.createFullImageURL(), placeholder: UIImage(named: "posterImage"))
+            vc.backdropImage.kf.setImage(with: viewModel.backdropURL, placeholder: UIImage(named: "backdropImage"))
+            vc.posterImage.imageView.kf.setImage(with: viewModel.posterURL, placeholder: UIImage(named: "posterImage"))
             vc.overviewLabel.text = viewModel.overview
             vc.genresLabel.text = viewModel.genres
             vc.popularityLabel.text = viewModel.popularity

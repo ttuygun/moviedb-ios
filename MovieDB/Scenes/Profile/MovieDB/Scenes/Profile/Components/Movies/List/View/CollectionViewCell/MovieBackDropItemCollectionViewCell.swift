@@ -19,7 +19,7 @@ class MovieBackDropItemCollectionViewCell: UICollectionViewCell {
     }
 
     func bind(_ viewModel: MovieItemViewModel) {
-        backdropImage.imageView.kf.setImage(with: viewModel.backdropPathURL)
+        backdropImage.imageView.kf.setImage(with: viewModel.backdropURL)
     }
 
 }

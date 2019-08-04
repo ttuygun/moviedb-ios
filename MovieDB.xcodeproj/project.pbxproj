@@ -24,6 +24,7 @@
 		D524F03822F1A00C00FA257D /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D524F03722F1A00C00FA257D /* SF-Pro-Display-Regular.otf */; };
 		D524F03A22F1A02E00FA257D /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D524F03922F1A02E00FA257D /* SF-Pro-Display-Semibold.otf */; };
 		D524F03C22F1A30D00FA257D /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D524F03B22F1A30D00FA257D /* SF-Pro-Display-Medium.otf */; };
+		D530EC4322F7725100C9BB84 /* ImageURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D530EC4222F7725100C9BB84 /* ImageURLBuilder.swift */; };
 		D552F9A122F2C48500CA77F5 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = D552F9A022F2C48500CA77F5 /* Video.swift */; };
 		D552F9A422F2C69B00CA77F5 /* VideoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D552F9A322F2C69B00CA77F5 /* VideoItemViewModel.swift */; };
 		D552F9A722F2CDBE00CA77F5 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D552F9A622F2CDBE00CA77F5 /* XCDYouTubeKit.framework */; };
@@ -35,7 +36,6 @@
 		D59091E522EDCF9D00DB907B /* PosterItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59091E422EDCF9D00DB907B /* PosterItemCollectionViewCell.xib */; };
 		D59091E822EDE94C00DB907B /* RxKingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59091E622EDE94C00DB907B /* RxKingfisher.framework */; };
 		D59091E922EDE94C00DB907B /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59091E722EDE94C00DB907B /* Kingfisher.framework */; };
-		D59091EB22EDEAD500DB907B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59091EA22EDEAD500DB907B /* StringExtensions.swift */; };
 		D59091EC22EDEBED00DB907B /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59091E722EDE94C00DB907B /* Kingfisher.framework */; };
 		D59091ED22EDEBED00DB907B /* Kingfisher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D59091E722EDE94C00DB907B /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D59091EE22EDEBED00DB907B /* RxKingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59091E622EDE94C00DB907B /* RxKingfisher.framework */; };
@@ -169,6 +169,7 @@
 		D524F03722F1A00C00FA257D /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		D524F03922F1A02E00FA257D /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		D524F03B22F1A30D00FA257D /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		D530EC4222F7725100C9BB84 /* ImageURLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLBuilder.swift; sourceTree = "<group>"; };
 		D552F9A022F2C48500CA77F5 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		D552F9A322F2C69B00CA77F5 /* VideoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoItemViewModel.swift; sourceTree = "<group>"; };
 		D552F9A622F2CDBE00CA77F5 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCDYouTubeKit.framework; path = Carthage/Build/iOS/XCDYouTubeKit.framework; sourceTree = "<group>"; };
@@ -178,7 +179,6 @@
 		D59091E422EDCF9D00DB907B /* PosterItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PosterItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		D59091E622EDE94C00DB907B /* RxKingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxKingfisher.framework; path = Carthage/Build/iOS/RxKingfisher.framework; sourceTree = "<group>"; };
 		D59091E722EDE94C00DB907B /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
-		D59091EA22EDEAD500DB907B /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		D593BDBC22EE3D65003F8EC7 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		D593BDC022EE3D9C003F8EC7 /* MovieDetailItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailItemViewModel.swift; sourceTree = "<group>"; };
 		D593BDC222EE3E34003F8EC7 /* MovieDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailNavigator.swift; sourceTree = "<group>"; };
@@ -297,8 +297,8 @@
 				D5194CCE22ECED58001FB3EF /* ErrorTracker.swift */,
 				D5194CD022ECED65001FB3EF /* Observable+Ext.swift */,
 				D5194CD222ECED6F001FB3EF /* Reusable.swift */,
-				D59091EA22EDEAD500DB907B /* StringExtensions.swift */,
 				D524F03122F17D8E00FA257D /* SwiftShadowImageView.swift */,
+				D530EC4222F7725100C9BB84 /* ImageURLBuilder.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -952,6 +952,7 @@
 				D5E33EB922F0DD3E0027B85E /* PopularTVShowsTableViewCell.swift in Sources */,
 				D5194CDD22ECEE98001FB3EF /* MoviesNavigator.swift in Sources */,
 				D5194CE722ECF657001FB3EF /* MoviesViewController.swift in Sources */,
+				D530EC4322F7725100C9BB84 /* ImageURLBuilder.swift in Sources */,
 				D5194CE122ECF1D3001FB3EF /* MovieItemViewModel.swift in Sources */,
 				D5194CD122ECED65001FB3EF /* Observable+Ext.swift in Sources */,
 				D5194CE922ECFD55001FB3EF /* NowPlayingMoviesTableViewCell.swift in Sources */,
@@ -961,7 +962,6 @@
 				D5194CDF22ECEFA7001FB3EF /* MoviesViewModel.swift in Sources */,
 				D524F03222F17D8E00FA257D /* SwiftShadowImageView.swift in Sources */,
 				D5E33EC322F0E7C30027B85E /* DetailViewController.swift in Sources */,
-				D59091EB22EDEAD500DB907B /* StringExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

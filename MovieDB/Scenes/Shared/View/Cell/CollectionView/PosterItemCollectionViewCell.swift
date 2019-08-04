@@ -22,7 +22,7 @@ class PosterItemCollectionViewCell: UICollectionViewCell {
 
     func bindMovie(_ viewModel: MovieItemViewModel, showVote: Bool) {
         titleLabel.text = viewModel.title
-        posterImage.imageView.kf.setImage(with: viewModel.posterPathURL)
+        posterImage.imageView.kf.setImage(with: viewModel.posterURL)
         if showVote {
             voteLabel.text = viewModel.vote
             voteLabel.isHidden = false
@@ -35,7 +35,7 @@ class PosterItemCollectionViewCell: UICollectionViewCell {
 
     func bindTVShow(_ viewModel: TVShowItemViewModel) {
         titleLabel.text = viewModel.title?.uppercased()
-        posterImage.imageView.kf.setImage(with: viewModel.posterPathURL)
+        posterImage.imageView.kf.setImage(with: viewModel.posterURL)
         voteLabel.isHidden = true
         voteImage.isHidden = true
     }
