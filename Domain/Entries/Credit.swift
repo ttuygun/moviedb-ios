@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Credits: Codable {
+public struct Credit: Codable {
     let id: Int?
     public let cast: [CastCrew]
     public let crew: [CastCrew]

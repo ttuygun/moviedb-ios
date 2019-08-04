@@ -29,7 +29,7 @@ final class TVShowUseCase: Domain.TVShowsUseCase {
         return network.detail(id: id)
     }
 
-    func credits(id: Int) -> Observable<Credits> {
+    func credits(id: Int) -> Observable<Credit> {
         return network.credits(id: id)
     }
 
