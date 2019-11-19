@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import Domain
-import RxKingfisher
+import Kingfisher
 
 class DetailViewController: UIViewController {
 
