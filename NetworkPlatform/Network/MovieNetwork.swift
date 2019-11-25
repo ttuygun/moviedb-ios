@@ -12,15 +12,7 @@ import RxSwift
 import RxMoya
 import Moya
 
-protocol MovieNetworkProtocol {
-    func topRated() -> Observable<[Movie]>
-    func nowPlaying() -> Observable<[Movie]>
-    func popular() -> Observable<[Movie]>
-    func detail(id: Int) -> Observable<MovieDetail>
-    func credits(id: Int) -> Observable<Credit>
-}
-
-public final class MovieNetwork: MovieNetworkProtocol {
+public final class MovieNetwork: Domain.MoviesUseCase {
 
     let provider: MoyaProvider<MDApi>
 
