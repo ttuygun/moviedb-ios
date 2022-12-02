@@ -21,8 +21,6 @@ In this project, I implemented the software architecture **MVVM-C** (Model–vie
 1. RxSwift
 2. Moya
 3. Kingfisher
-4. XCDYouTubeKit
-
 
 ### To-dos
 

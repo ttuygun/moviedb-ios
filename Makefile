@@ -1,2 +1,2 @@
 install:
-	carthage update --platform iOS
+	carthage update --use-xcframeworks --platform iOS

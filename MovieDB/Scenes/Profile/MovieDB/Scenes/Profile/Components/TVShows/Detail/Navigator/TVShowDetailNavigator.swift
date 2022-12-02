@@ -38,14 +38,6 @@ final class DefaultTVShowDetailNavigator: TVShowDetailNavigator {
     func playVideoAction(_ video: VideoItemViewModel) {
         let playerViewController = AVPlayerViewController()
         navigationController.present(playerViewController, animated: true, completion: nil)
-
-        XCDYouTubeClient.default().getVideoWithIdentifier(video.key) { [weak playerViewController] (video: XCDYouTubeVideo?, error: Error?) in
-            if let streamURLs = video?.streamURLs, let streamURL = (streamURLs[XCDYouTubeVideoQualityHTTPLiveStreaming] ?? streamURLs[YouTubeVideoQuality.hd720] ?? streamURLs[YouTubeVideoQuality.medium360] ?? streamURLs[YouTubeVideoQuality.small240]) {
-                playerViewController?.player = AVPlayer(url: streamURL)
-            } else {
-                self.navigationController.dismiss(animated: true, completion: nil)
-            }
-        }
     }
 
 }
